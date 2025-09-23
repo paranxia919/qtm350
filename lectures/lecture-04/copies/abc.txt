@@ -319,12 +319,12 @@ find . -name "*.txt" -size +1k
 ```
 
 ```{bash, echo=TRUE}
-# Find all .log files OR .tmp files
+# Find all .txt files OR .qmd files
 find . -name "*.txt" -or -name "*.qmd"
 ```
 
 ```{bash, echo=TRUE}
-# Find files that are NOT .txt files
+# Find files that are NOT .csv or .gif files
 find ./figures -not -name "*.csv" -and -not -name "*.gif"
 ```
 :::
