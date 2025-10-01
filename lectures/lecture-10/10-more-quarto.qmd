@@ -166,6 +166,61 @@ List:
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
+:::{.column width="40%"}
+- Jupyter notebooks are a popular format for data science and scientific computing (you probably know them already!)
+- It's easy to use Quarto to create and convert Jupyter notebooks
+- First, you should check if you have `jupyter` installed
+
+```bash
+# Install jupyter if you don't have it
+pip install jupyterlab
+```
+
+- Check if jupyter is installed
+
+```bash
+jupyter --version
+```
+:::
+
+:::{.column width="60%"}
+- Then, you can check if Quarto recognises Jupyter:
+
+```bash
+quarto check jupyter
+```
+
+- If Quarto does not find Jupyter, you can specify the path to the executable:
+
+```bash
+which python
+```
+- So you can set the path to Jupyter with:
+
+```bash
+# On macOS or Linux (WSL)
+export QUARTO_PYTHON=/path/to/your/python
+```
+
+- If you want to permanently set the path, add the line above to your `.bashrc` or `.zshrc` file (it depends on your shell)
+
+```bash
+# For example, if you use zsh (shell on macOS)
+echo 'export QUARTO_PYTHON=/path/to/your/python' >> ~/.zshrc
+source ~/.zshrc
+
+# If you use bash (default shell on Linux)
+echo 'export QUARTO_PYTHON=/path/to/your/python' >> ~/.bashrc
+source ~/.bashrc
+```
+:::
+:::
+:::
+
+## Jupyter notebooks
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
 :::{.column width="30%"}
 - You just have to add a YAML header to your notebook
 - Quarto will convert it to html, pdf, or other formats
@@ -389,15 +444,17 @@ format:
 - Let's see together two examples of slides created with Quarto
 
 - First, a simple example with text and images: <https://rawcdn.githack.com/danilofreire/qtm350/545939d5b14a7596fa6b726dc00ea6825bad321d/lectures/lecture-09/simple-slides.html>
-- The code is available here: <https://raw.githubusercontent.com/danilofreire/qtm350/main/lectures/lecture-09/simple-slides.qmd>
+- The code is available here: <https://raw.githubusercontent.com/danilofreire/qtm350/main/lectures/lecture-10/simple-slides.qmd>
 
-- I have also created a template with a more complex layout: <https://github.com/danilofreire/quarto-presentation>
+- I have also created a template with a more complex layout (it's the one I use for this class): <https://github.com/danilofreire/quarto-presentation>
 - You need to download the folder or install the template with 
   - `quarto install danilofreire/quarto-presentation`
 
-- Take a look at them, download the `.qmd` file of the simple slides, and try to create your own! 🚀
+- Take a look at them, download the `.qmd` file of the simple slides, and create your own! 🚀
 
-- Change the theme, add more content, change the font size, create columns, etc. Let me know if you have any questions! 😊
+- Change the theme, add more content, change the font size, create columns, etc
+
+- Let me know if you have any questions! 😊
 :::
 
 ## Where to host slides
@@ -417,7 +474,7 @@ format:
 - Upload your slides to a GitHub repository 
 - Go to <https://raw.githack.com/>
 - Paste the link to the `.html` file
-- For example: <https://github.com/danilofreire/qtm350/blob/main/lectures/lecture-09/simple-slides.html>
+- For example: <https://github.com/danilofreire/qtm350/blob/main/lectures/lecture-10/simple-slides.html>
 
 :::{style="text-align: center;"}
 ![](figures/githack.png){width="100%"}
