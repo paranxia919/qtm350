@@ -226,7 +226,7 @@ flowchart LR
 ## Downloading and installing Quarto
 
 :::{style="margin-top: 30px; font-size: 22px;"}
-Additionally, you can download and install Quarto using:
+You can also download and install Quarto using:
 
 :::{.columns}
 ::: {.column width="50%"}
@@ -286,6 +286,26 @@ quarto --help
 #| attr-output: 'style="font-size: 50%;"'
 quarto check
 ```
+:::
+
+## Installing the Quarto extension for VS Code
+
+:::{style="margin-top: 30px; font-size: 28px;"}
+:::{.columns}
+:::{.column width="50%"}
+- [Quarto for VS Code](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extension makes it easy to create and edit Quarto documents
+- It offers features like syntax highlighting, code completion, and document rendering
+- You can install it directly from the VS Code Extensions marketplace
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center; margin-top: -20px;"}
+![](figures/quarto-vscode.png)
+
+[Quarto extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
+:::
+:::
+:::
 :::
 
 ## Installing Pandoc and LaTeX
@@ -624,7 +644,6 @@ quarto render file.qmd
 quarto render file.qmd --to pdf
 quarto render file.qmd --to html
 ```
-:::
 :::
 
 ## Writing using the Visual Editor
