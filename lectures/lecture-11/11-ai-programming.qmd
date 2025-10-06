@@ -21,6 +21,18 @@ editor:
 
 # I hope you're having a lovely day! 😊 {background-color="#2d4563"}
 
+## Emory Data Science Club: Fall Info Session
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+![](figures/info-session01.png)
+:::
+
+## Emory Data Science Club: Fall Info Session
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+![](figures/info-session02.png)
+:::
+
 ## Some tips on folder and project management
 
 :::{style="margin-top: 30px; font-size: 20px;"}
@@ -228,11 +240,9 @@ Source: [Taulli (2024)](https://www.oreilly.com/library/view/ai-assisted-program
 
 ## AI-Assisted Programming: Benefits
 
-:::{style="margin-top: 30px; font-size: 22px;"}
-- The area is still very new, but we can already see some important benefits of AI-Assisted Programming:
+:::{style="margin-top: 30px; font-size: 25px;"}
 - [Minimising search time]{.alert}: According to the [2022 Stack Overflow Developer Survey](https://insights.stackoverflow.com/survey/2022), 62% of the developers spent more than 30 minutes a day searching for answers, and 25% spent over an hour a day. Users of GitHub Copilot report that [they finish tasks 55% faster](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/)
 - [A 24/7 coding advisor]{.alert}: You can ask questions and get code snippets at any time, and you can also use it to learn new languages. [Results are promising](https://www.mdpi.com/2227-7102/13/4/410)
-- [Easy IDE integration]{.alert}: You can use AI-Assisted Programming in your favourite IDE, and it will help you with code completion, refactoring, and debugging. [GitHub Copilot](https://copilot.github.com/) is available for Visual Studio Code, PyCharm, vim, etc
 - [Reflecting your codebase and workspace]{.alert}: New tools allow you to train LLMs on your own codebase and search for files and functions in your workspace, which is a [huge benefit]{.alert} for newcomers to a team
 - [Assessing code integrity]{.alert}: LLMs can identify bugs, vulnerabilities, run tests, and make suggestions
 - [Language translation]{.alert}: You can write code in your language and get it translated to another language. For example, IBM's Watsonx.ai model [understands 115 coding languages based on 1.5 trillion tokens](https://www.eweek.com/it-management/modernizing-the-mainframe-ibm-introduces-watsonx-code-assistant-for-z/)
@@ -436,7 +446,7 @@ Source: <https://learn.microsoft.com/en-us/copilot/security/prompting-tips>
 
 ## Input of the model
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width="50%"}
 - The input of the model is the data you feed into it
@@ -458,7 +468,7 @@ Source: <https://help.openai.com/en/articles/6654000-best-practices-for-prompt-e
 
 ## Format
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width="50%"}
 - Finally, you can also be explicit about the format you want the output to be in
@@ -479,16 +489,14 @@ Source: <https://help.openai.com/en/articles/6654000-best-practices-for-prompt-e
 
 ## How to get started with GitHub Copilot
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width="50%"}
-- We will look into Copilot in more detail in the next lecture, but I just want to make sure we all have it installed and ready to go 😉
 - First, it is a good idea to have [VS Code](https://code.visualstudio.com/) installed on your computer
 - Then, you can install the [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) from the VS Code marketplace
 - You will need to [sign in with your GitHub account](https://github.com) to use Copilot
-- Copilot works in the CLI as well, and you can install it using [this guide](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line). You need to install [GitHub CLI](https://cli.github.com/) first
-- Take some time to install and play around with Copilot before the next lecture 😃
-- Please let me know if you have any questions or issues!
+- Copilot works in the CLI as well! We will see in the next lecture (if time permits)
+- But let's have a quick look at the VSCode extension first 🤖
 :::
 
 :::{.column width="50%"}
@@ -507,41 +515,16 @@ Source: <https://help.openai.com/en/articles/6654000-best-practices-for-prompt-e
 :::{.columns}
 :::{.column width="50%"}
 - There are two main components to GitHub Copilot:
-  - [GitHub Copilot]{.alert}: This provides code suggestions and completions in the editor window
-  - [GitHub Copilot Chat]{.alert}: This provides a chat interface to Copilot, allowing you to ask questions and get code suggestions. It can also interact with code in the editor window. [This is by far the most powerful feature of Copilot]{.alert}
-- Copilot not only offers code suggestions, but it can also help you with writing documentation, providing explantions for code you don't know, and, more recently, retrieving code snippets and information from your whole workspace
-- In my view, it is the most convenient AI-assistant for programming available today
+  - [GitHub Copilot]{.alert}: Code suggestions and completions in the editor window
+  - [GitHub Copilot Chat]{.alert}: Chat interface to Copilot, allowing you to ask questions and get code suggestions. It can also interact with code in the editor window. [This is by far the most powerful feature of Copilot]{.alert}
+- Copilot not only offers code suggestions, but it can also help you with writing documentation, providing explanations for code you don't know, and, more recently, retrieving code snippets and information from your whole workspace
+- In my view, it is one of the most convenient AI-assistant for programming available today
 - It is also [very easy to use](https://docs.github.com/en/copilot/getting-started-with-github-copilot)
 :::
 
 :::{.column width="50%"}
 :::{style="text-align: center;"}
 ![](figures/unexpectedcopilot2.webp)
-:::
-:::
-:::
-:::
-
-## Autocompletion
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.columns}
-:::{.column width="50%"}
-- If you start writing code in the editor, and Copilot will suggest completions
-- You can accept these completions by pressing `Tab` or `Enter`
-- Alternatively, you can press `Ctrl` and the right arrow key to select just the next word T
-- This can be helpful if some, but not all, of the suggestion is appropriate
-- This autocompletion will work in a number of different contexts, including code cells in Jupyter Notebooks, or within a .py file.
-- The autocompletion is aware of the code around your cursor, and will suggest completions based on this context I
-- It can use functions already in the code, and can infer a likely purpose of the next piece of code based on the code that has already been written 
-- Sometimes, writing a comment will help guide Copilot to suggest relevant code to you
-:::
-
-:::{.column width="50%"}
-:::{style="text-align: center;"}
-![](figures/autocomplete.gif)
-
-Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assisted-programming/blob/main/resources/autocomplete.gif>
 :::
 :::
 :::
@@ -554,7 +537,7 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
 
 ![](figures/prompt_invitation.png)
 
-- If you press `Ctrl + I`, a text box will appear into which you can write a prompt C
+- If you press `Ctrl + I` (Windows/Linux) or `Cmd + I` (macOS), a text box will appear into which you can write a prompt
 - Copilot will suggest new code, or changes to existing code based on this prompt
 - These may be in the form of one or more proposed changes
 - You may choose to accept ach of these changes by clicking the Accept or Discard buttons
@@ -579,28 +562,10 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
 - You can access these in the `Ctrl + I` interface by typing a forward slash, then the name of the command. These are:
  - `/doc`: This will ask Copilot to generate documentation for the selected code. This will suggest changes in the editor 
  - `/explain`: This will ask Copilot to explain the selected code. It will do this in the Copilot Chat extension
- -  `/fix` will look for problems in the selected code and suggest fixes for them in the editor.
- -  `/tests` will ask Copilot to generate tests for the selected code. This will suggest changes in the editor, which may include creating a new file for the tests
+ - `/fix` will look for problems in the selected code and suggest fixes for them in the editor.
+ - `/tests` will ask Copilot to generate tests for the selected code. This will suggest changes in the editor, which may include creating a new file for the tests
 
 - You can also find these options by right-clicking a highlighted piece of code, and going into the Copilot menu
-:::
-
-## Copilot Chat
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-- You can also chat to Copilot in a manner closer to that of a chatbot like ChatGPT
-- To do this, you can open the chat window by clicking on the chat icon in the activity bar at the top right of the screen
-
-:::{style="text-align: center;"}
-![](figures/copilot_chat_icon.png){width="20%"}
-:::
-
-- You can type a message to Copilot in the window and it will respond, including suggesting code snippets where relevant
-- If Copilot produces a code snippet that you want to use, you can hover over the snippet and click the "Copy" button to copy it to the clipboard, click the "Insert at Cursor" button to insert at the location of the cursor in the editor, or insert it into a new file or the currently active terminal
-
-:::{style="text-align: center;"}
-![](figures/chat_inserting_code.png){width="65%"}
-:::
 :::
 
 ## Generate documentation
@@ -623,16 +588,21 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
 :::
 :::
 
-## Using `@github` and `#web` to get more specific results
+## Using `@github` to get information from any repository
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
 - Copilot also has the `@github` command that allows you to [interact with any repository online](https://github.blog/ai-and-ml/github-copilot/whats-new-with-github-copilot-july-2024/)
 - This means that you can ask questions about files, folders, structures, and functions in any repository on GitHub
-- It is powered by [Bing](https://www.bing.com/), and it can also search the web for information
-- You can use the `#web` command to ask Copilot to search the web for information
-- This can be useful if you are looking for information on a specific topic, or if you want to find out more about a particular function or library
+- You can use this to explore codebases, understand how functions work, and get examples of usage
+- For instance, you can try:
+
+```verbatim
+@github What is the latest commit in 
+danilofreire/qtm350 and what files 
+were changed?
+```
 :::
 
 :::{.column width="50%"}
@@ -643,20 +613,24 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
 :::
 :::
 
-## Using `@github` and `#web` to get more specific results
+## Using `@websearch` to get information from the web
+### Caution: experimental and a little buggy!
 
 :::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
 :::{.columns}
-:::{.column width="33%"}
-![](figures/github_search01.png){width="80%"}
+:::{.column width="50%"}
+- Copilot also has a `@websearch` command that allows you to search the web for information without leaving the editor
+- This is similar to using a search engine (and what other LLMs also do), but the results are integrated directly into the editor
+- You can use this to quickly find documentation, examples, and answers to your coding questions
+- First, you need to install the [Web Search for Copilot extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-websearchforcopilot) by Microsoft
+- Then, you will need to create an API from [Tavily](https://www.tavily.com/) (1000 calls per month for free)
+- Upon first use, it will ask you for that key
 :::
 
-:::{.column width="33%"}
-![](figures/github_search02.png){width="70%"}
+:::{.column width="50%"}
+:::{style="text-align: center; margin-top: -30px;"}
+![](figures/websearch.png){width="70%"}
 :::
-
-:::{.column width="33%"}
-![](figures/github_search03.png){width="70%"}
 :::
 :::
 :::
@@ -664,15 +638,42 @@ Source: <https://github.com/ImperialCollegeLondon/RCDS-introduction-to-AI-assist
 # GitHub Codespaces 🖥️ {background-color="#2d4563"}
 
 ## GitHub Codespaces
-### VS Code in the cloud
+### VS Code in the browser, anywhere
 
 :::{style="margin-top: 30px; font-size: 26px;"}
-- GitHub has recently released [GitHub Codespaces](https://github.com/codespaces), which allows you to run Visual Studio Code in your browser for free (up to 120 or 180 hours per month, depending on your plan)
+- GitHub has recently released [GitHub Codespaces](https://github.com/codespaces), which allows you to run Visual Studio Code in your browser for free (up to 60 hours or more per month, depending on your plan)
 - This is a great way to use Copilot if you don't have a powerful computer, or if you want to work on a project from a different device
 - It also integrates with GitHub, so you can easily access your repositories from Codespaces
 - You can also use Codespaces to collaborate with others on a project, as you can share a Codespace with other GitHub users
 - Codespaces is still in beta, but it works fine! 😊
 - Read more about it here: <https://docs.github.com/en/codespaces/overview>
+:::
+
+## GitHub Codespaces extension
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+:::{.columns}
+:::{.column width="50%"}
+- As always, there's a [VSCode Extension for GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces)
+- You can use it to easily create, manage, and connect to Codespaces from within VSCode
+- You can also use our friend `GitHub CLI` to manage Codespaces from the command line
+
+```bash
+gh codespace list
+gh codespace create -r OWNER/REPO_NAME [-b BRANCH]
+gh codespace stop -c CODESPACE-NAME
+gh codespace delete -c CODESPACE-NAME
+```
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center; margin-top: -30px;"}
+![](figures/codespaces-extension.png)
+
+More information here: <https://docs.github.com/en/codespaces/developing-in-a-codespace>
+:::
+:::
+:::
 :::
 
 ## GitHub Codespaces
