@@ -313,7 +313,7 @@ opposite.
 - They allow you to send a prompt to a model and get a response back
 - In contrast with user interfaces, [APIs are made for computers]{.alert}
   - They connects computers or pieces of software to each other
-- APIs can do a lot of things, but we mostly associated with [web APIs]{.alert}, which [allow computers to interact with websites or servers on the internet]{.alert}
+- APIs can do a lot of things, but we mostly associate them with [web APIs]{.alert}, which [allow computers to interact with websites or servers on the internet]{.alert}
 - We can do the same with LLMs too!
 - Instead of going to a website, we can [use an API straight from software]{.alert}
   - Here we will use VSCode and the [Roo Code extension](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) to interact with many APIs
@@ -342,7 +342,7 @@ Source: [Cloud Now](https://www.cloudnowtech.com/blog/what-are-apis-and-why-do-t
   - Control a web browser (if the LLM allows you to)
 - It can also interact with both local and remote APIs, including DeepSeek, OpenAI, Claude, etc
 - Installation: <https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline>
-- The code is available at <https://github.com/RooVetGit/Roo-Code>
+- The code is available at <https://github.com/RooCodeInc/Roo-Code>
 :::
 
 :::{.column width="50%"}
@@ -386,7 +386,7 @@ Documentation: <https://docs.roocode.com/>
 - [OpenRouter](https://openrouter.ai/) provides a uniform way to interact with many APIs
 - And it is super easy to use: just sign up and get your API key
 - Then, we are doing to select the models we will use in Roo Code settings
-- For this example, we will use the free version of DeepSeek
+- For this example, we will use the free version of [Z.ai's GLM 4.5 Air](https://openrouter.ai/z-ai/glm-4.5-air:free)
 - Feel free to test other free models (or paid ones) available in OpenRouter
 - Go to <https://openrouter.ai/> and sign up for an account (it is free, no credit card or subscription needed)
 :::
@@ -440,15 +440,7 @@ Documentation: <https://docs.roocode.com/>
 ## Adding API keys
 
 :::{style="margin-top: 30px; font-size: 23px; text-align: center;"}
-:::{.columns}
-:::{.column width="50%"}
-![](figures/roocode-settings.png){width=100%}
-:::
-
-:::{.column width="50%"}
-![](figures/roocode-models.png){width=100%}
-:::
-:::
+![](figures/roocode-models.png){width=50%}
 :::
 
 ## Running a model in Roo Code
@@ -475,13 +467,13 @@ Documentation: <https://docs.roocode.com/>
 - Agents are like [chatbots that can act autonomously]{.alert}, including [running code, sending emails, and interacting with websites]{.alert}
 - [This is the future of AI]{.alert}, and it is already here!
 - For coders, one of the best uses of agents is to [let it write and run code for you]{.alert}
-- It is the closest thing to "vibes programming" (😂) we have so far
+- It is the closest thing to "vibe coding" (😂) we have so far
 :::
 
 ## Using agents in Roo Code
 
 :::{style="margin-top: 30px; font-size: 25px;"}
-- Let's ask Roo Code to do the following:
+- Let's ask Roo Code to do the following (make sure you use `Code` mode):
   - Create a new folder called `document`
   - Create a new Quarto file called `api.qmd`
   - Write a few paragraphs about the importance of APIs
@@ -489,7 +481,7 @@ Documentation: <https://docs.roocode.com/>
   - Render the file and open it in VSCode
   - We could ask it to send it to GitHub, but we will do it manually just for the sake of it
 - Prompt:
-  - "`Create a new folder called document in my current folder. Create a new Quarto file called api.qmd. Write three paragraphs about the importance of APIs. Save the file. Render the file and open it in VSCode.`"
+  - "`Create a new folder called document in my current folder. Create a new Quarto file called api.qmd. Write three paragraphs about the importance of APIs. Save the file. Use quarto preview to visualise the rendered file.`"
 - And see the magic happen! 🪄
 :::
 
@@ -522,10 +514,10 @@ Documentation: <https://docs.roocode.com/>
 :::{.columns}
 :::{.column width="50%"}
 - Roo Code is not the only tool that allows you to interact with APIs
-- Other popular choices are [Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) and [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue)
+- Other popular choices are [Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev), [KiloCode](https://kilocode.ai/), or [OpenCode](https://opencode.ai/)
 - They are all free to use, and you can choose the one that best fits your needs
   - Roo Code is actually a fork of Cline, but with more features
-  - Continue is a new tool that is gaining popularity
+  - KiloCode is a new tool that is gaining popularity, and OpenCode works in the terminal
 - They perform similar tasks and have a similar interface, so feel free to try them all 😉
 :::
 
@@ -539,25 +531,27 @@ Documentation: <https://docs.roocode.com/>
 :::
 :::
 
-## Alternatives to Roo Code and DeepSeek
+## Alternatives to Roo Code 
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-- DeepSeek is not the only free model available in OpenRouter
-- Two models that are worth mentioning are [Google Gemini](https://openrouter.ai/models?q=gemini%20free) and [Qwen](https://openrouter.ai/models?q=qwen%20free)
+- There are many great, free models available for various AI tasks
+- Some models that are worth mentioning are [Qwen](https://openrouter.ai/qwen/qwen3-235b-a22b:free), [GPT OSS](https://openrouter.ai/openai/gpt-oss-20b:free), [Kimi](https://openrouter.ai/moonshotai/kimi-k2:free), or [Gemma](https://openrouter.ai/google/gemma-3-27b-it:free)
 - Gemini offers free access to [all its models]{.alert}, including their "thinking" ones
 - Now that you know how to use APIs, you can get an API key for free at <https://aistudio.google.com/> and use it in VS Code
-- Qwen is a model specialised in coding, and it is great for writing code snippets
-- An advantage that both have over DeepSeek is that they are [multimodal]{.alert}, meaning they can generate text, images, and code
-- For instance, you can input a screenshot on Gemini and ask it to transcribe and a translate a text, or Qwen to recreate a table in Markdown
+- Qwen and Gemini have CLI interfaces too! See: <https://github.com/QwenLM/qwen-code> and <https://github.com/google-gemini/gemini-cli>
 :::
 
 :::{.column width="50%"}
-:::{style="text-align: center; text-align: center;"}
+:::{style="text-align: center; margin-top: -30px;"}
+![](figures/qwen.png){width=100%}
+
+<https://github.com/QwenLM/qwen-code>
+
 ![](figures/gemini.png){width=100%}
 
-<https://aistudio.google.com/apikey>
+<https://github.com/google-gemini/gemini-cli>
 :::
 :::
 :::
@@ -680,6 +674,7 @@ cp .env.example .env
 :::{style="margin-top: 30px; font-size: 23px;"}
 - Here is an example of the `.env` file
 - You just need to add your API key to the `GOOGLE_API_KEY` field and you are good to go!
+- You can also add the API keys for other services if you want to use them, or add them later on the web interface
 
 ```verbatim
 OPENAI_ENDPOINT=https://api.openai.com/v1
@@ -696,8 +691,8 @@ DEEPSEEK_ENDPOINT=https://api.deepseek.com
 DEEPSEEK_API_KEY=
 ```
 
-- To run the server, just type the command below in the `web-ui` folder:
-  - `python webui.py --ip 127.0.0.1 --port 7788`
+- To run the server, just type the command below:
+  - `cd web-ui && .venv/bin/python webui.py --ip 127.0.0.1 --port 7788`
 :::
 
 ## Browser-use Web-ui in action
