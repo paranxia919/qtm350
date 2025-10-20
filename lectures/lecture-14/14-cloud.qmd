@@ -37,7 +37,7 @@ editor:
   - It lets you download and run hundreds of LLMs locally
   - It's free and open-source, and easy to customise with `Modelfiles`
 - We also saw how to use [LM Studio](https://lmstudio.ai) and [Hugging Face](https://huggingface.co)
-  - You have more than [one million models](https://huggingface.co/models) to choose from!
+  - You have more than [two million models](https://huggingface.co/models) to choose from!
 :::
 
 :::{.column width="50%"}
@@ -52,7 +52,7 @@ editor:
 
 ## Local LLMs and AI agents
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width="50%"}
 - We learned about [LLM APIs]{.alert} and how to use them via [OpenRouter](https://openrouter.ai)
@@ -60,8 +60,8 @@ editor:
 - We also saw how to use [Roo Code](https://github.com/RooVetGit/Roo-Code) and integrate APIs in VS Code
   - You can use any API with a friendly interface
   - You can fully automate your workflow with [agents]{.alert}
-- Finally, we learned how to use [Web-Ui](https://github.com/browser-use/web-ui)
-- Web-Ui makes websites accessible for AI agents, and it can perform pretty much [any task on the internet]{.alert}
+- Finally, we learned how to use [Web-UI](https://github.com/browser-use/web-ui)
+- Web-UI makes websites accessible for AI agents, and it can perform pretty much [any task on the internet]{.alert}
 - Have a look at its parent project too: [Browser Use](https://github.com/browser-use/browser-use)
   - You can use it in Python and integrate it in your scripts!
 :::
@@ -105,7 +105,7 @@ If the video doesn't play, please click [here](https://www.youtube.com/watch?v=L
 :::{style="text-align: center;"}
 ![](figures/amazon.png){width=100%}
 
-Source: [GeekWire](https://www.geekwire.com/2025/amazons-quarterly-profits-soar-to-a-record-20-billion-but-cloud-growth-comes-up-short/)
+Source: [GeekWire (2025)](https://www.geekwire.com/2025/amazons-quarterly-profits-soar-to-a-record-20-billion-but-cloud-growth-comes-up-short/)
 :::
 :::
 :::
@@ -128,7 +128,7 @@ Source: [GeekWire](https://www.geekwire.com/2025/amazons-quarterly-profits-soar-
 
 :::{.column width="50%"}
 - Infrastructure is [very expensive]{.alert}: 
-  - Hardware costs (Dell charges [50k for its least expensive server](https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r6715/pe_r6715_tm_vi_vp_sb)) 
+  - Hardware costs (Dell charges [~7k for its least expensive server](https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r570/na_promo_per570_2)) 
   - Real estate costs 
   - Cooling system, power bill 
   - A few systems engineers 
@@ -156,7 +156,7 @@ Source: [GeekWire](https://www.geekwire.com/2025/amazons-quarterly-profits-soar-
 | ❌ High investment risk       | ✅ Reduced risk               |
 | ❌ Long time-to-market        | ✅ Shorter time-to-market     |
 | ✅ Manages own data           | ❌ Trust the vendor?          |
-| ✅ Completely in control      | ❌ Dependant from a specific vendor? |
+| ✅ Completely in control      | ❌ Dependent on a specific vendor? |
 :::
 
 ## Case study: Animoto
@@ -165,19 +165,19 @@ Source: [GeekWire](https://www.geekwire.com/2025/amazons-quarterly-profits-soar-
 :::{.columns}
 :::{.column width="50%"}
 - [Animoto](https://animoto.com/): Lets users create videos from their own photos/music
-- Auto-edits photos and aligns them with the music, so it "looks good"
-- Built using Amazon EC2+S3+SQS 
+- Auto-edits photos and videos and aligns them with the music, so it "looks good"
+- Built using [Amazon EC2](https://aws.amazon.com/ec2/) (Elastic Compute Cloud) + [S3](https://aws.amazon.com/s3/) (Simple Storage Service) + [SQS](https://aws.amazon.com/sqs/) (Simple Queue Service)
 - Released a Facebook app in mid-April 2008 
 - More than [750,000 people signed up within 3 days]{.alert}
 - EC2 usage went [from 50 machines to 3,500 (x70 scalability!)]{.alert}
-- [No way they could have done this with traditional infrastructure]{.alert}!
+- [No way they could have done this with traditional infrastructure!]{.alert}
 :::
 
 :::{.column width="50%"}
 :::{style="text-align: center;"}
 ![](figures/animoto.jpg){width=100%}
 
-Source: Jeff Bezos' talk at Stanford in 2008
+Source: [Jeff Bezos' talk at Stanford in 2008](https://youtu.be/6nKfFHuouzA?si=M5LCwMxMUC5Ay3oY)
 :::
 :::
 :::
@@ -215,13 +215,13 @@ Source: [The Washington Post](https://www.washingtonpost.com/archive/politics/20
 - [SaaS (Software as a Service)]{.alert}: 
   - Software is hosted on a cloud and accessed via the internet as a complete application
   - You don't have to worry about updates, security, or maintenance
-  - You (usually) pay a subscription fee (monthly or yearly)
-  - Examples: [Gmail](https://gmail.com), [Office 365](https://www.office.com), [Salesforce](https://www.salesforce.com)
+  - You often pay a subscription fee (monthly or yearly)
+  - Examples: [Gmail](https://gmail.com), [Office 365](https://www.office.com), [Salesforce](https://www.salesforce.com), [GitHub Copilot](https://github.com/features/copilot)
 - [PaaS (Platform as a Service)]{.alert}:
   - Provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure
   - Usually, the platform offers a series of APIs
   - You pay for the platform and the resources you use (e.g., storage, bandwidth)
-  - Examples: [Google App Engine](https://cloud.google.com/appengine), [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk), [Heroku](https://www.heroku.com)
+  - Examples: [Google App Engine](https://cloud.google.com/appengine), [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk), [Heroku](https://www.heroku.com), [GitHub Actions/Codespaces/Pages](https://github.com/features/actions)
 :::
 
 ## Cloud computing services
@@ -235,7 +235,7 @@ Source: [The Washington Post](https://www.washingtonpost.com/archive/politics/20
 ### PaaS
 
 :::{style="margin-top: 30px; font-size: 26px; text-align: center;"}
-![](figures/paas.png){width=80%}
+![](figures/paas.png){width=100%}
 :::
 
 ## Cloud computing services
@@ -320,6 +320,25 @@ Source: [The Washington Post](https://www.washingtonpost.com/archive/politics/20
 </div>
 :::
 
+## What is middleware?
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Middleware is software that [connects two separate applications]{.alert}
+- This is software we rarely see, but which is [essential for the functioning of the internet]{.alert}
+- For instance, software than handles [authentication, authorisation, and encryption]{.alert}, drivers that [connect to databases]{.alert}, and software that [handles messaging]{.alert}
+- [Amazon SQS](https://aws.amazon.com/sqs), [Apache Kafka](https://kafka.apache.org), and [RabbitMQ](https://www.rabbitmq.com) are examples of middleware
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/middleware.avif){width=100%}
+:::
+:::
+:::
+:::
+
 ## What is virtualisation?
 
 :::{style="margin-top: 30px; font-size: 26px;"}
@@ -344,25 +363,6 @@ More about [virtualisation](https://www.redhat.com/en/topics/virtualization/what
 :::
 :::
 
-## What is middleware?
-
-:::{style="margin-top: 30px; font-size: 26px;"}
-:::{.columns}
-:::{.column width="50%"}
-- Middleware is software that [connects two separate applications]{.alert}
-- This is software we rarely see, but which is [essential for the functioning of the internet]{.alert}
-- For instance, software than handles [authentication, authorisation, and encryption]{.alert}, drivers that [connect to databases]{.alert}, and software that [handles messaging]{.alert}
-- [Amazon SQS](https://aws.amazon.com/sqs), [Apache Kafka](https://kafka.apache.org), and [RabbitMQ](https://www.rabbitmq.com) are examples of middleware
-:::
-
-:::{.column width="50%"}
-:::{style="text-align: center;"}
-![](figures/middleware.avif){width=100%}
-:::
-:::
-:::
-:::
-
 ## The Big Three ☁️
 
 :::{style="margin-top: 30px; font-size: 26px; text-align: center;"}
@@ -375,8 +375,8 @@ More about [virtualisation](https://www.redhat.com/en/topics/virtualization/what
 :::{.columns}
 :::{.column width="50%"}
 - Amazon Web Services is a collection of cloud-based services
-- It's a very big one
-- Let me say it again: [a VERY big one]{.alert} 😂
+- It's a very [large platform]{.alert}
+- Let me say it again: [a VERY LARGE ONE]{.alert} 😂
 - They offer a wide range of services:
   - [Compute, storage, databases, analytics, machine learning, AI, IoT, security, and more]{.alert}
 - Many companies use AWS, including [Netflix, Airbnb, and NASA]{.alert}
@@ -413,9 +413,9 @@ More about [virtualisation](https://www.redhat.com/en/topics/virtualization/what
 - However, please be [mindful of the costs!]{.alert}
 - You pay for the instances you use, and the [costs can add up quickly]{.alert}
 - Per-second (or per-hour) billing
-- Data transfer [not]{.alert} included!
-- Persistent storage [not]{.alert} included!
-- Scaling [not]{.alert} included!
+- Data transfer [is not]{.alert} included!
+- Persistent storage [is not]{.alert} included!
+- Scaling [is not]{.alert} included!
 
 :::{style="text-align: center;"}
 ![](figures/ec2meme.jpg){width=100%}
@@ -471,14 +471,14 @@ Source: [AWS](https://aws.amazon.com/autoscaling)
 ## Cloud storage
 ### Amazon S3 - Simple Storage Service
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width="50%"}
-- Amazon has three main storage services: [S3, EBS, and EFS]{.alert}
-- S3 is a web service that provides [object storage]{.alert} through a web interface
+- Amazon has three main storage services: [S3](https://aws.amazon.com/s3) (Simple Storage Service), [EBS](https://aws.amazon.com/ebs) (Elastic Block Store), and [EFS](https://aws.amazon.com/efs) (Elastic File System)
+- S3 is a web service that provides [scalable object storage]{.alert} for data backup, archival, and analytics
 - You can store data in [buckets]{.alert}, which are like folders
 - Data are distributed across a minimum of [three availability zones]{.alert}
-  - 99.9999999% durability (nine nines!)
+  - 99.999999999% durability (eleven nines!)
 - You can set up [lifecycle policies]{.alert} to automatically move data to cheaper storage classes
   - [Standard, Intelligent-Tiering, Glacier, Glacier Deep Archive]{.alert}
 - You can also set up [versioning]{.alert} to keep multiple versions of an object (works like `git`)
@@ -520,19 +520,42 @@ Source: [AWS](https://aws.amazon.com/autoscaling)
 :::
 :::
 
-## Database services
-### Amazon RDS - Relational Database Service
+## Amazon EFS - Elastic File System
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-- Amazon RDS is a web service that makes it easy to set up, operate, and scale a [relational database]{.alert}
+- EFS is a web service that provides [scalable file storage]{.alert} for use with EC2 instances
+- EFS is mainly used for [shared file storage]{.alert}
+  - Multiple EC2 instances can access the same file system
+  - Useful for [big data and analytics]{.alert}
+  - Also for [content management and web serving]{.alert}
+- You can create file systems and mount them to your EC2 instances
+- As with S3 and EBS, you pay for the storage you use
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+![](figures/efs.png){width=50%}
+<https://aws.amazon.com/efs/>
+:::
+:::
+:::
+:::
+
+## Database services
+### Amazon RDS - Relational Database Service
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width="50%"}
+- [Amazon RDS](https://aws.amazon.com/rds/) is a web service that makes it easy to set up, operate, and scale a [relational database]{.alert}
 - You can choose from [six popular database engines]{.alert}:
   - [Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle, and SQL Server]{.alert}
 - You can also use [Aurora Serverless]{.alert} to automatically scale your database
 - It's a managed service, so you don't have to worry about [backups, patches, or updates]{.alert}
-- It works well with another AWS service called [Athena]{.alert}, which allows you to query data in S3 using SQL
-- You can also use [Redshift]{.alert} for data warehousing, and [DynamoDB]{.alert} for NoSQL databases
+- It works well with another AWS service called [Athena](https://aws.amazon.com/athena/), which allows you to query data in S3 using SQL
+- You can also use [Redshift](https://aws.amazon.com/redshift/) for data warehousing and business analytics, and [DynamoDB](https://aws.amazon.com/dynamodb/) for NoSQL databases
 :::
 
 :::{.column width="50%"}
@@ -550,16 +573,16 @@ Source: [AWS](https://aws.amazon.com/autoscaling)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width="50%"}
-- Finally, let's talk about [Amazon SageMaker]{.alert}
+- Finally, let's talk about [Amazon SageMaker](https://aws.amazon.com/sagemaker/)
 - SageMaker is a fully managed service that allows you to build, train, and deploy machine learning models at scale
 - It has several pre-configured models, such as [TensorFlow, PyTorch, and Scikit-learn]{.alert}
 - You can also bring your own models too, and use [Jupyter notebooks]{.alert} to train them
-- Lots of other models available in the [AWS Marketplace]{.alert}, and you can also use [SageMaker Studio]{.alert} to manage your projects
-- Machine Learning: application services 
-  - Comprehend (for NLP) 
-  - Rekognition (Visual Analysis) 
-  - Translate 
-  - Polly (text-to-speech)
+- Lots of other models available in the [AWS Marketplace](https://aws.amazon.com/marketplace), and you can also use [SageMaker Studio]{.alert} to manage your projects
+- Machine Learning: application services
+  - [Comprehend (for NLP)](https://aws.amazon.com/comprehend/)
+  - [Rekognition (Visual Analysis)](https://aws.amazon.com/rekognition/)
+  - [Translate](https://aws.amazon.com/translate/)
+  - [Polly (text-to-speech)](https://aws.amazon.com/polly/)
 :::
 
 :::{.column width="50%"}
@@ -719,7 +742,7 @@ Then click on the bucket and upload the file
 
 ## What we learned today
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width="50%"}
 - Why cloud computing is important and [how it can help your business]{.alert}
