@@ -32,7 +32,7 @@ editor:
 ::::{.column width="50%"}
 - [Introduction to SQL]{.alert}: We will start by learning the fundamentals of SQL, focusing on [SQLite](https://www.sqlite.org/index.html){data-modal-type="iframe"}
 - [Setup]{.alert}: You will learn how to:
-  - Install and load the SQLite3 Editor in VSCode
+  - Install and load the SQLite3 Editor in VS Code
   - Create a database
   - Create a table
   - Add and query rows
@@ -91,7 +91,7 @@ editor:
   - Perfect for small projects
 - SQLite has some cons too, such as: 
   - Not being easy to scale 
-  - Not allowing multiple users to write the database at the same time (although [some workarounds exist](https://fly.io/docs/litefs){data-modal-type="iframe"})
+  - Not allowing multiple users to write to the database at the same time (although [some workarounds exist](https://fly.io/docs/litefs){data-modal-type="iframe"})
   - Poor handling of time-series data. So far, [TimescaleDB for Postgres](https://www.timescale.com/) is the best option for this
   - But SQLite also has [lots of extensions](https://github.com/nalgeon/sqlean) to help you with many tasks (more on that later)
 :::
@@ -99,7 +99,7 @@ editor:
 :::{.column width="50%"}
 - Some people argue that SQLite is not a real database because it does not have a server, or that storing the database in a single file is not suitable for large projects
 - [Both arguments are false]{.alert}: 
-  - You can use [LiteFS](https://fly.io/docs/litefs) to scale SQLite and allow multiple users to write the database at the same time
+  - You can use [LiteFS](https://fly.io/docs/litefs) to scale SQLite and allow multiple users to write to the database at the same time
   - SQLite is capable of handling [databases that are an Exabyte in size](https://sqlite.org/hctree/doc/hctree/doc/hctree/index.html) (that's one million Terabytes, or one billion Gigabytes 🤯)
   - I'm sure that this is more than enough for pretty much any project you will ever work on 😅
 - And to be honest, the difference between different SQL databases is not that big
@@ -112,7 +112,7 @@ editor:
 ### macOS and Linux
 
 :::{style="margin-top: 50px; font-size: 20px;"}
-- If you use MacOS or Linux, you probably already have SQLite installed
+- If you use macOS or Linux, you probably already have SQLite installed
 - To check, open a terminal and type `sqlite3` 
   - Then type `.quit` to exit the SQLite prompt!
 - If you see the SQLite prompt, you are good to go! 😊
@@ -140,7 +140,7 @@ sqlite3 --version
 - Windows users can download the SQLite precompiled binaries from the [SQLite website](https://www.sqlite.org/download.html). Download the files that have the `sqlite3` DLL and the command-line shell (`sqlite-dll...` and `sqlite-tools...`)
 - Then follow these steps:
   - Create a folder `C:\>sqlite` and unzip the files in this folder, which will give you `sqlite3.def`, `sqlite3.dll` and `sqlite3.exe` files 
-  - Double click the `sqlite3` file to open the software, and you will see the SQLite prompt
+  - Double-click the `sqlite3` file to open the software, and you will see the SQLite prompt
 
 ```{verbatim}
 C:\>sqlite3
@@ -161,24 +161,24 @@ sqlite>
 :::
 :::
 
-## Installing SQLite3 Editor in VSCode
+## Installing SQLite3 Editor in VS Code
 
 :::{style="margin-top: 50px; font-size: 20px;"}
 :::{.columns}
 :::{.column width="40%"}
-- To use SQLite in VSCode, you need to install the [SQLite3 Editor](https://marketplace.visualstudio.com/items?itemName=yy0931.vscode-sqlite3-editor) extension (click on the link to go to the extension page)
-- Or you can search for `SQLite3 Editor` in the extensions tab in VSCode
+- To use SQLite in VS Code, you need to install the [SQLite3 Editor](https://marketplace.visualstudio.com/items?itemName=yy0931.vscode-sqlite3-editor) extension (click on the link to go to the extension page)
+- Or you can search for `SQLite3 Editor` in the extensions tab in VS Code
 - Click on `Install` to install the extension
-- As we will see later, this extension allows you to connect to your SQLite database and run SQL commands directly in VSCode, and even edit files without having to write any SQL queries (!)
+- As we will see later, this extension allows you to connect to your SQLite database and run SQL commands directly in VS Code, and even edit files without having to write any SQL queries (!)
 - You can use it to create tables, export data to CSV and JSON formats, run queries in the command line, and compare versions using `git diff`
 - It is a very useful extension and I highly recommend it! 😊
-- We will use this extensions today to interact with our SQLite database
+- We will use this extension today to interact with our SQLite database
 :::
 
 :::{.column width="60%"}
 :::{style="text-align: center;"}
 ![](figures/vscode-sqlite.png){width="100%"}
-[Download it here](https://marketplace.visualstudio.com/items?itemName=yy0931.vscode-sqlite3-editor) or search for it in the extensions tab in VSCode
+[Download it here](https://marketplace.visualstudio.com/items?itemName=yy0931.vscode-sqlite3-editor) or search for it in the extensions tab in VS Code
 :::
 :::
 :::
@@ -197,7 +197,7 @@ sqlite>
 - Simply create a file ending in `.sqlite` or `.db` and open it with the SQLite3 Editor
 - Here I will create a file called `example.db` and open it with the extension
 
-```{verbatin}
+```{verbatim}
 touch example.db
 ```
 
@@ -255,7 +255,7 @@ touch example.db
 ![](figures/add-columns.png){width="100%"}
 :::
 
-- This is equivalent of the following SQL code (as you can see in the editor):
+- This is equivalent to the following SQL code (as you can see in the editor):
  
 ```{sql}
 CREATE TABLE drivers (
@@ -271,7 +271,7 @@ CREATE TABLE drivers (
 
 ## Creating a table with SQLite3 Editor
 
-:::{style="margin-top: 50px; font-size: 22px; text-align=center;"}
+:::{style="margin-top: 50px; font-size: 22px; text-align: center;"}
 ![](figures/view-table.png)
 :::
 
@@ -297,7 +297,7 @@ CREATE TABLE drivers (
 ### Primary and foreign keys
 
 - The `PRIMARY KEY` constraint is used to uniquely identify each row in a table
-- It cannot contain `NULL` values and are usually integers
+- It cannot contain `NULL` values and is usually an integer
 - If you don't want to enter the numbers manually, you can use the `AUTOINCREMENT` keyword
   - Example: `driver_id INTEGER PRIMARY KEY AUTOINCREMENT`
 - The `FOREIGN KEY` constraint is used to link two tables together
@@ -363,7 +363,7 @@ Table: orders
 - We can add rows to a table by using the `INSERT INTO` command
 - This command adds rows with `VALUES` to the bottom of the table
 - In SQL, different commands need to be separated by a semicolon (`;`)
-- You write [system commands in capital letters]{.alert} to easily distinguish column names from variables and values
+- You write [system commands in capital letters]{.alert} to distinguish column names from variables and values
 - Let's add some information about the drivers
 - Click on `Query Editor` and paste the following code:
 
@@ -387,7 +387,7 @@ INSERT INTO drivers (driver_id, driver_name, nationality, victories) VALUES
 
 ## Adding rows to the table
 
-:::{style="margin-top: 50px; font-size: 22px; text-align=center;"}
+:::{style="margin-top: 50px; font-size: 22px; text-align: center;"}
 ![](figures/added-values.png)
 :::
 
@@ -507,7 +507,7 @@ DROP TABLE students;
 :::{.column width="50%"}
 - Rename a column: `ALTER TABLE students RENAME COLUMN gpa TO grade;`
 
-![](figures/rename-column.png){width="90%}
+![](figures/rename-column.png){width="90%"}
 
 - Delete a row with `student_id = 2`: `DELETE FROM students WHERE student_id = 2;`
 
@@ -585,7 +585,7 @@ WHERE (nationality = 'German') AND (driver_id = 3);
 :::{.column width="50%"}
 ### Aggregate
 
-- To compute aggregate statistics use a statistic function, such as `SUM()` or `AVG()`
+- To compute aggregate statistics use a statistical function, such as `SUM()` or `AVG()`
 - The `AS` is an alias which assigns a name to the aggregate statistic
   
 ```{sql}
@@ -754,8 +754,8 @@ result = result[result['sum_victories'] > 10]
 :::{.column width="50%"}
 - The SQLite3 Editor allows you to easily import and export data to many formats, including CSV and JSON
 - Just click on `Other Tools` and then `Export / Import`
-- If you want to export an XLXS file, you can choose between exporting one or all tables
-- Importing is just as easy: select the file and the table you want to import the data from
+- If you want to export an XLSX file, you can choose between exporting one or all tables
+- Importing is just as easy: select the file and the table you want to import the data into
 - You can also do this with SQLite commands:
   - Export to CSV: `sqlite3 example.db .mode csv .output example.csv SELECT * FROM drivers;`
   - [More about exporting data here](https://www.sqlitetutorial.net/sqlite-export-csv/){data-modal-type="iframe"}

@@ -25,7 +25,7 @@ editor:
 ### In our last class, we covered
 
 :::{style="margin-top: 30px; font-size: 24px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - Essential navigation commands: `ls`, `cd`, `pwd`
 - Useful directory shortcuts: `~` (home), `.` (current), `..` (parent directory)
@@ -50,7 +50,7 @@ editor:
 ### Regular expressions
 
 :::{style="margin-top: 30px; font-size: 21px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - Regular expressions are useful to search for patterns in text
 - They are used in many programming languages and tools, and you can use them in the command line with `grep`
@@ -81,7 +81,7 @@ editor:
 ## Today's lecture
 
 :::{style="margin-top: 30px; font-size: 24px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - Learn how to think in terms of projects
 - Introduction to version control systems
@@ -107,7 +107,7 @@ editor:
 ## Taming chaos
 
 :::{style="margin-top: 30px; font-size: 24px;"}
-:::{.colunms}
+:::{.columns}
 ::: {.column width="50%"}
 In the data science workflow, there are [two sorts of surprises and cognitive stress]{.alert}:
 
@@ -117,7 +117,7 @@ In the data science workflow, there are [two sorts of surprises and cognitive st
 :::
 
 :::{.incremental}
-- [Analytical surprise]{.alert} is when you learn something from or about the data.
+- [Analytical surprise]{.alert} is when you learn something from or about the data
 
 - [Infrastructural surprise]{.alert} is when you discover that:
 
@@ -763,9 +763,9 @@ git log
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 - [Phew!]{.alert} That was a lot of work! 😅
-- Next class we will see how we can create branches and merge them.
-- We will also learn how to resolve conflicts and push our changes to GitHub.
-- For now, let's keep our `my_project` folder and we will use it in our next class.
+- Next class we will see how we can create branches and merge them
+- We will also learn how to resolve conflicts and push our changes to GitHub
+- For now, let's keep our `my_project` folder and we will use it in our next class
 - You can try to create a repository on GitHub and push your changes there! 🤓
 - [Questions?]{.alert}
 :::

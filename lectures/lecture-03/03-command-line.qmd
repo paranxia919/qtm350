@@ -82,7 +82,7 @@ for (package in packages) {
 :::{.column width="50%"}
 - Images can be broken down into a [grid of coloured pixels]{.alert}
 - Colours are represented using the [RGB model]{.alert}, with each colour channel (red, green, blue) ranging from 0-255
-- 8-bit color uses 256 levels per channel, allowing for over [16 million possible colors]{.alert}
+- 8-bit colour uses 256 levels per channel, allowing for over [16 million possible colours]{.alert}
 - Text is broken into [individual characters]{.alert}, with each character mapped to a number using an encoding like [ASCII]{.alert}
 - [ASCII is a simple lookup table]{.alert} mapping the numbers 0-255 to characters
 - [Unicode]{.alert} extends ASCII to support accented characters and symbols from all languages
@@ -239,7 +239,7 @@ Credit [Dave Kerr](https://effective-shell.com/part-2-core-skills/what-is-a-shel
 :::{.column width="50%"}
 -   It is important to note that there are [many different shell programs]{.alert}, and they [differ in terms of functionality](https://en.wikipedia.org/wiki/Comparison_of_command_shells)
 -   On most Unix-like systems, the default shell is a program called [**bash**](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), which stands for "Bourne-Again Shell"
--   Other examples are the [Z Shell](https://en.wikipedia.org/wiki/Z_shell) (or zsh; default on MacOS), [Windows Command Prompt](https://en.wikipedia.org/wiki/Cmd.exe) (cmd.exe, the default CLI on MS Windows), [Windows PowerShell](https://en.wikipedia.org/wiki/PowerShell), [C Shell](https://en.wikipedia.org/wiki/C_shell), and many more
+-   Other examples are the [Z Shell](https://en.wikipedia.org/wiki/Z_shell) (or zsh; default on macOS), [Windows Command Prompt](https://en.wikipedia.org/wiki/Cmd.exe) (cmd.exe, the default CLI on MS Windows), [Windows PowerShell](https://en.wikipedia.org/wiki/PowerShell), [C Shell](https://en.wikipedia.org/wiki/C_shell), and many more
 -   When a terminal opens, it will immediately start the user's preferred shell program. (This can be [changed](https://effective-shell.com/part-1-transitioning-to-the-shell/getting-started/).)
 :::
 :::

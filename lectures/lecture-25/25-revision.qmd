@@ -9,7 +9,7 @@ format:
   clean-revealjs:
     self-contained: true
     code-overflow: wrap
-    footer: "[Course Revision](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-25/25-revision.html)"
+    footer: "[Course Revision](25-revision.html)"
 transition: slide
 transition-speed: default
 scrollable: true
@@ -30,7 +30,7 @@ editor:
     - [Reliability]{.alert} focuses on ensuring your results are consistent every time you run your code
     - [Reproducibility]{.alert} is about enabling others (and your future self) to obtain the same results using your data and code
     - [Robustness]{.alert} deals with making your analyses resilient to variations in data and scalable to larger problems
-- These principles leads to [more credible, collaborative, and durable scientific work]{.alert} 🤓
+- These principles lead to [more credible, collaborative, and durable scientific work]{.alert} 🤓
 :::
 
 :::{.column width="50%"}
@@ -96,8 +96,8 @@ Source: [Von Neumann architecture (Wikipedia)](https://en.wikipedia.org/wiki/Von
 * At their core, computers represent all information using the [binary]{.alert} system (base 2), consisting of only 0s and 1s
 * These correspond to the physical on/off states of transistors
 * A single binary digit is a [bit]{.alert}
-* Eight bits form a [byte]{.alert}, a common unit for storing data like characters}
-* [Hexadecimal (base 16)]{.alert} uses digits 0-9 and A-F as a shorthand for binary, where each hex digit represents four bits (e g, `FF` is `11111111` binary, 255 decimal)
+* Eight bits form a [byte]{.alert}, a common unit for storing data like characters
+* [Hexadecimal (base 16)]{.alert} uses digits 0-9 and A-F as a shorthand for binary, where each hex digit represents four bits (e.g., `FF` is `11111111` binary, 255 decimal)
 * Often used for representing colours (`#FF0000`) or memory addresses concisely
 :::
 
@@ -143,7 +143,7 @@ Languages bridge the gap between human instructions and machine execution:
 
 * **Machine Code**: Raw binary instructions the CPU executes directly
 * **Assembly Language**: A [low-level]{.alert} language using mnemonics for machine instructions; specific to a CPU architecture, offering fine control but poor portability
-* **High-Level Languages** (e g, Python, R, Java): Use more human-readable syntax, abstracting hardware details They are more portable but require translation (compilation or interpretation)
+* **High-Level Languages** (e.g., Python, R, Java): Use more human-readable syntax, abstracting hardware details. They are more portable but require translation (compilation or interpretation)
 * **Translation Methods**:
     * [Compiled]{.alert} (e g, C++): Entire source code translated to machine code *before* running, often faster execution
     * [Interpreted]{.alert} (e g, Python): Code executed line-by-line *during runtime* by an interpreter, often easier development
@@ -236,7 +236,7 @@ Source: [Julia Evans (2024)](https://wizardzines.com/comics/grep/)
     * `>`: Redirect output to file ([overwrites]{.alert})
     * `>>`: Append output to file
     * `<`: Redirect input from file (less common)
-* **Pipes `|`**: Chain commands; output of the left command becomes input for the right command (e g, `history | grep cd`)
+* **Pipes `|`**: Chain commands; output of the left command becomes input for the right command (e.g., `history | grep cd`)
 * **Shell Scripting**: Write command sequences in a `.sh` file for automation
     * Start with `#!/bin/bash` (shebang)
     * Make executable: `chmod +x script.sh`
@@ -415,16 +415,16 @@ WebUI GitHub repository: <https://github.com/browser-use/web-ui>
 :::{.column width="50%"}
 * **IaaS (Infrastructure as a Service)**: Building blocks like virtual machines ([EC2]{.alert} in AWS), and networks. You manage everything else
 * **PaaS (Platform as a Service)**: Platform for developing, running, and managing applications without managing the underlying infrastructure (OS, servers)
-* **SaaS (Software as a Service)**: Delivers complete software applications over the internetg
-* **FaaS (Function as a Service / Serverless)**: Run code in response to events without managing any servers Examples: AWS Lambda, Google Cloud Functions
+* **SaaS (Software as a Service)**: Delivers complete software applications over the internet
+* **FaaS (Function as a Service / Serverless)**: Run code in response to events without managing any servers. Examples: AWS Lambda, Google Cloud Functions
 :::
 
 :::{.column width="50%"}
 * **EC2 (Elastic Compute Cloud)**: Scalable virtual servers ([instances]{.alert}) in the cloud. You choose the OS and configuration
     * Choose an [AMI (Amazon Machine Image)]{.alert} (OS image) to launch an instance
     * **Instance types**: Different configurations of CPU, RAM, storage
-    * **Security groups**: Virtual firewalls to control inbound/outbound traffi
-  * Choose OS (Linux/Windows), instance type (CPU/RAM), storage ([EBS]{.alert}) Connect via [SSH]{.alert}
+        * **Security groups**: Virtual firewalls to control inbound/outbound traffic
+    * Choose OS (Linux/Windows), instance type (CPU/RAM), storage ([EBS]{.alert}). Connect via [SSH]{.alert}
 * **S3 (Simple Storage Service)**: Durable and scalable [object storage]{.alert}. Store files in [buckets]{.alert} 
 * **RDS (Relational Database Service)**: Service for relational databases (PostgreSQL, MySQL, etc)
 * **SageMaker**: Platform for building, training, and deploying Machine Learning models
@@ -589,7 +589,7 @@ Going beyond basic queries:
     * **Image**: Immutable template built from a [Dockerfile]{.alert}
     * **Container**: Running instance of an image
     * **Dockerfile**: Text file with instructions (`FROM`, `RUN`, `COPY`, etc) to build the image
-    * **Registry** (e g, Docker Hub): Stores and shares images
+    * **Registry** (e.g., Docker Hub): Stores and shares images
 :::
 :::
 :::
@@ -638,12 +638,12 @@ Example Dockerfile
 
 # Conclusion 🎓 {background-color="#2d4563"}
 
-## What we learned 
+## What we learnt 
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-A summary of the key skills and concepts from QTM350:
+A summary of the key skills and concepts from QTM 350:
 
 * **Foundations**: The importance of [computational literacy]{.alert}, [reproducibility]{.alert}, and robust practices in data science
 * **Core Workflow**: Effective use of the [command line]{.alert}, version control with [Git & GitHub]{.alert}, and reproducible reporting with [Quarto]{.alert}

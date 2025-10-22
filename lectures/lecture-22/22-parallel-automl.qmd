@@ -9,7 +9,7 @@ format:
   clean-revealjs:
     self-contained: true
     code-overflow: wrap
-    footer: "[Parallel Computing II](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-222/22-parallel-automl.html)"
+    footer: "[Parallel Computing II](22-parallel-automl.html)"
 transition: slide
 transition-speed: default
 scrollable: true
@@ -33,7 +33,7 @@ editor:
 - **Parallel computing** is a type of computation in which many [calculations or processes are carried out simultaneously]{.alert}
 - Python has several libraries that allow you to parallelise your code
   - We discussed the `joblib` library, which is a simple and effective way to parallelise your code
-  - But we spent most of our time discussing `dask`, which is currently the _de facto_ standard for parallel computing in Python 
+  - But we spent most of our time discussing Dask, which is currently the _de facto_ standard for parallel computing in Python 
 - We also saw that [parallel computing is not a panacea]{.alert}: it can be hard to implement and may not always lead to performance improvements
 - But when it works, it works great! 🚀
 :::
@@ -74,7 +74,7 @@ editor:
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 - A Dask Cluster is [a collection of Dask workers]{.alert} that can be used to parallelise your computations
-- In plain English, a Dask Cluster is [a group of computational engines]{.alert} (cores, GPUs, servers, etc) that work together to solve a problem
+- In plain English, a Dask Cluster is [a group of computational engines]{.alert} (cores, GPUs, servers, etc.) that work together to solve a problem
 - Workers provide two functions:
   - [Compute tasks as directed by the scheduler]{.alert}, the scheduler being the brain of the cluster
   - [Store and serve computed results]{.alert} to other workers or clients
@@ -181,7 +181,7 @@ Dask dashboard is available at: http://127.0.0.1:8789/status
 
 ```{python}
 #| echo: true
-#| eval: true
+#| eval: false
 import dask.array as da
 
 # Create a random array
@@ -191,7 +191,7 @@ x
 
 ```{python}
 #| echo: true
-#| eval: true
+#| eval: false
 # Perform a simple computation
 y = (x + x.T).sum()
 
@@ -254,7 +254,7 @@ y.compute()
 :::{style="margin-top: 30px; font-size: 26px;"}
 - [Dask ML](https://ml.dask.org/) is a scalable machine learning library built on top of Dask
 - It provides parallel implementations of many popular machine learning algorithms and libraries, such as scikit-learn, XGBoost, LightGBM, TensorFlow, and PyTorch
-- Dask ML is built on top of Dask Arrays and DataFrames, allowing you to scale your machine learning workflows to large datasets
+- Dask ML is built on top of Dask arrays and dataframes, allowing you to scale your machine learning workflows to large datasets
 - You can use Dask ML to do many tasks, such as model selection, model evaluation, and, most importantly, hyperparameter tuning
 - And you can also use it together with [automated machine learning (AutoML)](https://en.wikipedia.org/wiki/Automated_machine_learning) tools to speed up the process
 - So let's see what AutoML is and how to use it with Dask ML!
@@ -314,13 +314,13 @@ from sklearn.svm import SVC
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 - Let's estimate the model with a simple grid search
-- `param_space`: A list of settings to try out for the model
-- `C`: Controls how much to punish mistakes (regularisation, smaller values = more regularisation) to prevent overfitting
+- `param_space`: a list of settings to try out for the model
+- `C`: controls how much to punish mistakes (regularisation, smaller values = more regularisation) to prevent overfitting
   - This is in exponential notation, so `np.logspace(-6, 6, 13)` will create a list of 13 values between $10^{-6}$ and $10^6$ (!)
-- `gamma`: Defines how far the influence of a single example reaches (small points = model is less sensitive to the data)
+- `gamma`: defines how far the influence of a single example reaches (smaller values = model is less sensitive to the data)
   - This is also in exponential notation, so `np.logspace(-8, 8, 17)` will create a list of 17 values between $10^{-8}$ and $10^8$ (!!)
-- `tol`: Tells the model when to stop trying to improve
-- `class_weight`: Options for handling imbalanced data
+- `tol`: tells the model when to stop trying to improve
+- `class_weight`: options for handling imbalanced data
 - This is pretty standard scikit-learn code, but with a twist: we are using `joblib.parallel_backend('dask')` to parallelise the search
 - This will distribute the search across the workers in the Dask cluster (and we don't have to worry about it!)
 - The `RandomizedSearchCV` object will try out 50 different combinations of hyperparameters and return the best one
@@ -386,7 +386,7 @@ Time taken: 2.68 seconds
 - The model was trained in 2.68 seconds, which is pretty fast
 - The dataset is small, so we are not memory constrained
 - The model is not complex, so we are not compute constrained
-- So in this case we only used dask to parallelise the search, but we could have used scikit-learn alone
+- So in this case we only used Dask to parallelise the search, but we could have used scikit-learn alone
 - But what if we had a larger dataset or a more complex model?
 :::
 
@@ -397,7 +397,7 @@ Time taken: 2.68 seconds
 - It makes sense to use Parquet and Dask DataFrames to load the data in chunks, but this may not be enough
 - A cool solution is Dask's `dask_ml` `Incremental` class, which can train models on chunks of data
 - It starts training the model on many hyper-parameters on a small amount of data, and then only continues training those models that seem to be performing well
-- The commands is `dask_ml.model_selection.IncrementalSearchCV()`
+- The command is `dask_ml.model_selection.IncrementalSearchCV()`
 - There are some new variations of this method that are worth checking out. [Here is the documentation](https://ml.dask.org/hyper-parameter-search.html)
 - This strategy is based on scikit-learn's `partial_fit` method. [More information here](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier.partial_fit)
 :::
@@ -467,7 +467,7 @@ Time taken: 51.71 seconds
 :::{style="margin-top: 30px; font-size: 21px;"}
 
 - Here we have a case where the model is too complex to train in a reasonable amount of time
-- Or the models require specialised hardware like GPU
+- Or the models require specialised hardware like GPUs
 - The best class for this case is `HyperbandSearchCV`, which is a hyperparameter search algorithm that is based on the [Hyperband algorithm](https://arxiv.org/abs/1603.06560)
 - In a nutshell, this algorithm is easy to use, has strong mathematical motivation and performs remarkably well 
 
@@ -626,9 +626,9 @@ Time taken: 20.40 seconds
 :::{.column width="50%"}
 - Let's see another example using the `Prophet` library
 - `Prophet` is a forecasting tool that is open source and maintained by Facebook
-- It is designed for analyzing time series data that display patterns on different time scales
+- It is designed for analysing time series data that display patterns on different time scales
 - It is particularly good for data that has multiple seasonality with changing trends
-- The library is built on top of `pystan`, which is a Python interface to Stan, a probabilistic programming language
+- The library is built on top of `PyStan`, which is a Python interface to Stan, a probabilistic programming language
 - First, let's install the library:
 
 ```{verbatim}
@@ -658,11 +658,11 @@ import pandas as pd
 from prophet import Prophet
 ```
 
-- We will values represent the log daily page views for [Peyton Manning’s wikipedia page](https://en.wikipedia.org/wiki/Peyton_Manning)
+- The values represent the log daily page views for [Peyton Manning’s Wikipedia page](https://en.wikipedia.org/wiki/Peyton_Manning)
 
 ```{python}
 #| echo: true
-#| eval: true
+#| eval: false
 df = pd.read_csv(
     'https://raw.githubusercontent.com/facebook/prophet/master/examples/example_wp_log_peyton_manning.csv',
     parse_dates=['ds']
@@ -679,7 +679,7 @@ df.head()
 
 ```{python}
 #| echo: true
-#| eval: true
+#| eval: false
 df.plot(x='ds', y='y')
 
 m = Prophet(daily_seasonality=False)
@@ -694,7 +694,7 @@ m.fit(df)
 
 ```{python}
 #| echo: true
-#| eval: true
+#| eval: false
 future = m.make_future_dataframe(periods=365)
 forecast = m.predict(future)
 m.plot(forecast)
@@ -741,7 +741,7 @@ df_cv.head()
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 - Today we discussed how to parallelise data analysis tasks with Dask and AutoML
-- We learned about Dask Clusters and how to set up a Dask Client
+- We learnt about Dask Clusters and how to set up a Dask Client
 - We discussed the types of problems data scientists face when scaling their models and datasets
   - No constraints
   - Compute constrained
@@ -750,7 +750,7 @@ df_cv.head()
 
 - We also saw how AutoML tools like TPOT can be used to speed up the process of model selection and hyperparameter tuning
 - And we discussed how to use Prophet and Dask together to parallelise the diagnostics stage of research
-- I hope you enjoyed the lecture and learned something new today! 😊
+- I hope you enjoyed the lecture and learnt something new today! 😊
 :::
 
 ## Next class

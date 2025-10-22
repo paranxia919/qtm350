@@ -25,7 +25,7 @@ editor:
 
 ## Last time, we discussed:
 
-:::{style="magin-top: 40px; font-size: 24px;"}
+:::{style="margin-top: 40px; font-size: 24px;"}
 :::{.columns}
 :::{.column width="50%"}
 - The impact of the [Transformer](https://arxiv.org/abs/1706.03762) architecture in natural language processing
@@ -45,7 +45,7 @@ editor:
 
 ## Last time, we discussed:
 
-:::{style="magin-top: 40px; font-size: 25px;"}
+:::{style="margin-top: 40px; font-size: 25px;"}
 :::{.columns}
 :::{.column width="50%"}
 - Despite their issues, LLMs can be very useful for generating code, especially for repetitive tasks, boilerplate code, and code snippets
@@ -104,7 +104,7 @@ editor:
 - It is a [paid service]{.alert}, free plan offers little
 - Cons: does not have access to the internet and it is not integrated into an IDE
 - Pros: it is [very powerful]{.alert} and can generate code, text, and more. It also has a very cool feature called [Artifacts](https://support.anthropic.com/en/articles/9945615-intro-to-artifacts) that allows you to write and edit code together with the AI
-- It one of the best tools for generating code, especially for more complex tasks
+- It is one of the best tools for generating code, especially for more complex tasks
 - [Try it out](https://claude.ai/)
 :::
 
@@ -224,7 +224,7 @@ editor:
   - GitHub CLI installed
   - The Copilot CLI extension
 
-- MacOS and Linux users can install [GitHub CLI](https://cli.github.com/) with [Homebrew](https://brew.sh/):
+- macOS and Linux users can install [GitHub CLI](https://cli.github.com/) with [Homebrew](https://brew.sh/):
 
 ```{verbatim}
 brew install gh
@@ -292,7 +292,7 @@ gh auth login
 ? Authenticate Git with your GitHub credentials? (Y/n) Y
 ```
 
-- You will be asked to login
+- You will be asked to log in
 
 ```{verbatim}
 ? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
@@ -489,7 +489,7 @@ class SimpleCalculator:
 :::{style="margin-top: 40px; font-size: 21px;"}
 - Type `/fix` followed by a code snippet to fix it
 - This function is supposed to check if a number is even, but it has a logical error. The division operation `(number / 2)` should be replaced with the modulo operation `(number % 2)`
-- If you hoover over the `Fixed Code` block, you will see the options: 
+- If you hover over the `Fixed Code` block, you will see the options: 
   - Apply the fix in the editor
   - Insert the fixed code at the cursor
   - Copy the fixed code to the clipboard
@@ -569,7 +569,7 @@ def is_even(number):
 ## Example 11: Interact with the workspace 💻
 
 :::{style="margin-top: 40px; font-size: 21px;"}
-- Another example: let's ask it to find files that contains bash commands
+- Another example: let's ask it to find files that contain Bash commands
 - Click on the icons and they will open!
 
 :::{style="text-align: center;"}

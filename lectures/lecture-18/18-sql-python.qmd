@@ -91,7 +91,7 @@ cur = conn.cursor()
 #| echo: true
 #| eval: true
 # Use triple quotes for multi-line SQL
-# Drop table if exist 
+# Drop table if exists 
 sql_drop = '''
 DROP TABLE IF EXISTS drivers; 
 '''

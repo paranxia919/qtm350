@@ -28,7 +28,7 @@ editor:
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width="50%"}
-- We have learned a lot of things so far! 🤓
+ - We have learnt a lot of things so far! 🤓
 - Command line, Git, GitHub, Quarto, AI tools, and more! 💻
 - Congratulations on your progress! 🎉
 - Today we continue with AI-Assisted Programming! 🤖
@@ -39,7 +39,7 @@ editor:
 
 :::{.column width="50%"}
 - Specifically, we will learn how to use [Ollama](https://ollama.com/) and [LM Studio](https://lmstudio.ai/), which offer many pre-trained models that can be used for a variety of tasks
-- In order to run different models in VSCode, we will use [Roo Code](https://github.com/RooVetGit/Roo-Code), an extension that allows us to add any model that uses an API
+- In order to run different models in VS Code, we will use [Roo Code](https://github.com/RooVetGit/Roo-Code), an extension that allows us to add any model that uses an API
 - We will also see what [OpenRouter](https://openrouter.ai/) is, and how it can be used to interact with APIs
 - Finally, we will see how they will help you write code, text, and analyse images faster, all straight from your code editor! 
 - [Let's get started!]{.alert} 🤓
@@ -69,9 +69,9 @@ editor:
 :::{.column width="50%"}
 - [Ollama](https://ollama.com/) is a command-line tool that makes it easy to run LLMs on your computer
 - Its models are already [pre-trained]{.alert}, so they are ready to use out of the box
-- There are [dozens of models avaiable]{.alert}, including [DeepSeek](https://ollama.com/library/deepseek-r1), Microsoft's [phi-4](https://ollama.com/library/phi4), and Meta's [Llama 3](https://ollama.com/library/llama3.3)
+- There are [dozens of models available]{.alert}, including [DeepSeek](https://ollama.com/library/deepseek-r1), Microsoft's [phi-4](https://ollama.com/library/phi4), and Meta's [Llama 3](https://ollama.com/library/llama3.3)
 - The only issue is that [some models are quite large]{.alert}, so you need space and enough RAM to run them
-- But not all of them are: for example, you can download a distilled version of [DeepSeek that is only 1.5GB](https://ollama.com/library/deepseek-r1:1.5b)
+- But not all of them are: for example, you can download a distilled version of [DeepSeek that is only 1.5 GB](https://ollama.com/library/deepseek-r1:1.5b)
   - But if you have the space, you can [literally run the same model that DeepSeek uses]{.alert}!
 - Let's see how Ollama works!
 :::
@@ -92,11 +92,11 @@ editor:
 :::{.columns}
 :::{.column width="50%"}
 - First, download Ollama here: <https://ollama.com/download>
-  - There are versions for Windows, Mac, Linux, and Docker, but you will run it in the terminal
+  - There are versions for Windows, macOS, Linux, and Docker, but you will run it in the terminal
 - After you have installed Ollama, the only thing you need to do is to download a model
   - You can do this by running `ollama pull <model-name>`
   - For example, to download DeepSeek, you would run `ollama pull deepseek-r1`
-  - This will install the 4.7Gb model in your computer, but there others available
+  - This will install the 4.7 GB model on your computer, but there are others available
 - To run the model, just type `ollama run <model-name>`
 :::
 
@@ -113,9 +113,9 @@ editor:
 ## DeepSeek in action
 
 :::{style="margin-top: 30px; font-size: 23px;"}
-- Here I'm running the 14b parameters version of DeepSeek
+- Here I'm running the 14B-parameter version of DeepSeek
   - You can change the size of the model by adding `:XX` to the model name
-  - For instance, to run the 1.5b version, you would run `ollama run deepseek-r1:1.5b`
+  - For instance, to run the 1.5B version, you would run `ollama run deepseek-r1:1.5b`
 - You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models
 
 :::{style="text-align: center;"}
@@ -146,11 +146,11 @@ editor:
 :::{.column width="50%"}
 ### What else can you do?
 
-- Browse [dozens of models](https://ollama.com/library), there some highly specialised:
+- Browse [dozens of models](https://ollama.com/library), there are some highly specialised:
   - [DeepSeek without government censorship](https://ollama.com/library/r1-1776)
   - [Models specialised in Arabic language](https://ollama.com/library/command-r7b-arabic)
   - [Models specialised in coding (Qwen 2.5 is great)](https://ollama.com/library/qwen2.5-coder:14b)
-- And you create your own model with personalised instructions with a [Modelfile](https://github.com/ollama/ollama/blob/main/docs/modelfile.md)
+- And you can create your own model with personalised instructions with a [Modelfile](https://github.com/ollama/ollama/blob/main/docs/modelfile.md)
 - Let's see how to do this in the next slide! 😉
 :::
 :::
@@ -171,7 +171,7 @@ editor:
 - Let's see an example of a Modelfile for a model called "Ironic Jeeves"!
 - Prompt: 
   - "`Create an Ollama Modelfile for a model called 'Ironic Jeeves' that is an exceedingly ironic and sarcastic British butler. Use llama3.2:1b.`"
-- You can find the modelfile [in our repository](https://github.com/danilofreire/qtm350/blob/main/lectures/lecture-13/jeeves)
+- You can find the Modelfile [in our repository](https://github.com/danilofreire/qtm350/blob/main/lectures/lecture-13/jeeves)
 :::
 
 ## Creating a Modelfile
@@ -259,7 +259,7 @@ opposite.
   - For example, you can create a model that is an [expert in a specific field, such as medicine, law, or finance]{.alert}
 - You can also use a `Modelfile` to create a model that is [more efficient]{.alert}
   - For example, you can create a model that is faster or uses less memory than the default models
-- LLMs contains [too much information]{.alert} and sometimes you need to [filter out the noise]{.alert}
+- LLMs contain [too much information]{.alert} and sometimes you need to [filter out the noise]{.alert}
 - You can also use a `Modelfile` to create a model that is [more secure]{.alert}
   - For example, you can create a model that does not store any information about the user, or that you can safely run in a server in a secure environment
 - They are also [cost effective]{.alert}, so you can use them in your own projects or in small companies
@@ -273,7 +273,7 @@ opposite.
 :::{.columns}
 :::{.column width="40%"}
 - If you prefer [a more user-friendly interface]{.alert}, you can use [LM Studio](https://lmstudio.ai/)
-- It provides a graphic interface to run LLMs, very much like ChatGPT/DeepSeek, and [allows you to run any model from Hugging Face](https://huggingface.co/models) (more than 1 million models available!)
+- It provides a graphical interface to run LLMs, very much like ChatGPT/DeepSeek, and [allows you to run any model from Hugging Face](https://huggingface.co/models) (more than 1 million models available!)
 - Think of [Hugging Face](https://huggingface.co/) as the GitHub of NLP models: you can find, share, and run models from there
 - Download the app from <https://lmstudio.ai/download> and run it
 - Then, type `command + shift + M` to choose a model
@@ -312,11 +312,11 @@ opposite.
 - Application Programming Interfaces (APIs) are a way to [interact with a model using code]{.alert}
 - They allow you to send a prompt to a model and get a response back
 - In contrast with user interfaces, [APIs are made for computers]{.alert}
-  - They connects computers or pieces of software to each other
+  - They connect computers or pieces of software to each other
 - APIs can do a lot of things, but we mostly associate them with [web APIs]{.alert}, which [allow computers to interact with websites or servers on the internet]{.alert}
 - We can do the same with LLMs too!
 - Instead of going to a website, we can [use an API straight from software]{.alert}
-  - Here we will use VSCode and the [Roo Code extension](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) to interact with many APIs
+  - Here we will use VS Code and the [Roo Code extension](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) to interact with many APIs
 :::
 
 :::{.column width="50%"}
@@ -334,7 +334,7 @@ Source: [Cloud Now](https://www.cloudnowtech.com/blog/what-are-apis-and-why-do-t
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width="50%"}
-- [Roo Code](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) is an extension for VSCode that serves as a [coding agent]{.alert}
+- [Roo Code](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) is an extension for VS Code that serves as a [coding agent]{.alert}
 - Imagine something like GitHub Copilot, but with a lot more functionality
 - Roo Code comes with powerful tools that can: 
   - Read and write files in your project 
@@ -360,7 +360,7 @@ Documentation: <https://docs.roocode.com/>
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-- First, install the Roo Code extension in VSCode
+- First, install the Roo Code extension in VS Code
 - Open the extension (rocket icon 🚀) and let's configure our first LLM!
 - Click on the gear (top right) and you will be taken to the settings
 - You will see a series of options, let's see one by one
@@ -385,7 +385,7 @@ Documentation: <https://docs.roocode.com/>
 :::{.column width="40%"}
 - [OpenRouter](https://openrouter.ai/) provides a uniform way to interact with many APIs
 - And it is super easy to use: just sign up and get your API key
-- Then, we are doing to select the models we will use in Roo Code settings
+- Then, we are going to select the models we will use in Roo Code settings
 - For this example, we will use the free version of [Z.ai's GLM 4.5 Air](https://openrouter.ai/z-ai/glm-4.5-air:free)
 - Feel free to test other free models (or paid ones) available in OpenRouter
 - Go to <https://openrouter.ai/> and sign up for an account (it is free, no credit card or subscription needed)
@@ -478,7 +478,7 @@ Documentation: <https://docs.roocode.com/>
   - Create a new Quarto file called `api.qmd`
   - Write a few paragraphs about the importance of APIs
   - Save the file
-  - Render the file and open it in VSCode
+  - Render the file and open it in VS Code
   - We could ask it to send it to GitHub, but we will do it manually just for the sake of it
 - Prompt:
   - "`Create a new folder called document in my current folder. Create a new Quarto file called api.qmd. Write three paragraphs about the importance of APIs. Save the file. Use quarto preview to visualise the rendered file.`"
@@ -740,9 +740,9 @@ Result: `The Guardian article says 'I’m Still Here wins Oscar for best interna
 :::{style="margin-top: 30px; font-size: 24px;"}
 - We can run LLMs locally using Ollama and LM Studio
   - Ollama is a command-line tool that allows you to run pre-trained models on your computer
-  - LM Studio is a graphic interface that allows you to run any model from Hugging Face
+  - LM Studio is a graphical interface that allows you to run any model from Hugging Face
 - We can interact with APIs using Roo Code
-  - Roo Code is an extension for VSCode that allows you to interact with many APIs
+  - Roo Code is an extension for VS Code that allows you to interact with many APIs
   - You can use it to run code, write text, and analyse images faster
 - We can use agents to automate tasks
   - Agents are like chatbots that can act autonomously

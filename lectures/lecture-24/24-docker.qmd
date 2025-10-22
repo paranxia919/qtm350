@@ -9,7 +9,7 @@ format:
   clean-revealjs:
     self-contained: true
     code-overflow: wrap
-    footer: "[Docker](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-24/24-docker.html)"
+    footer: "[Docker](24-docker.html)"
 transition: slide
 transition-speed: default
 scrollable: true
@@ -161,8 +161,8 @@ editor:
 - The base image is the starting point for the container, and it can be any image available on [Docker Hub](https://hub.docker.com/)
 - So please create a text file called `Dockerfile` (without any extension) in your directory
 - Any editor will do to create the file! 😉
-- You will need about 2GB of free space to build the container, so make sure you have enough space on your computer
-- We start will start our Dockerfile with `FROM`, followed by the base image we want to use
+- You will need about 2 GB of free space to build the container, so make sure you have enough space on your computer
+- We will start our Dockerfile with `FROM`, followed by the base image we want to use
 
 ```Dockerfile
 # Use the official Ubuntu image as the base image

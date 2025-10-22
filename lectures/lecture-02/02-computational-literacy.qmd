@@ -141,7 +141,7 @@ for (package in packages) {
 :::{.callout-tip}
 - Please check the [installation tutorials](https://danilofreire.github.io/qtm350/tutorials/tutorials.html) for more information
 - You can also get help from the [Student Tech Support](https://ats.emory.edu/sdl/StudentTechnologySupport/index.html)
-- If you have any questions, please let me know!
+- If you have any questions, please let me know
 :::
 :::::
 
@@ -507,10 +507,10 @@ represented by a 1.
 ::: {.column width="40%"}
 :::{style="font-size: 28px; margin-top: 40px;"}
 :::{.incremental}
-- What if we want to represent an image? How can we convert that to numbers?
-- First, break the image down into a grid of colours, where each dot of color has a distinct hue 
-- A dot of color in this context is called a [pixel](https://en.wikipedia.org/wiki/Pixel)
-- Now we just need to represent a single color (a pixel) as a number!
+- What if we want to represent an image? How can we convert that to numbers
+- First, break the image down into a grid of colours, where each dot of colour has a distinct hue 
+- A dot of colour in this context is called a [pixel](https://en.wikipedia.org/wiki/Pixel)
+- Now we just need to represent a single colour (a pixel) as a number
 :::
 :::
 :::
@@ -523,13 +523,13 @@ represented by a 1.
 :::
 
 :::: {.columns}
-::: {.column width="60%"}
-![](figures/rgb.png)
-:::
-
-::: {.column width="40%"}
-:::{style="font-size: 24px; margin-top: 40px;"}
+:::{.column width="50%"}
+:::{style="font-size: 22px; margin-top: 20px;"}
 :::{.incremental}
+- When we represent values with multiple bytes, it can be hard to distinguish where numbers begin and end
+- [Hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) is a number system with 16 digits: 0123456789**ABCDEF**
+- It is used to represent binary numbers in a more compact way
+- Each hex digit corresponds to 4 binary bits, making it a shorthand for binary:
 - The [RGB colour model](https://en.wikipedia.org/wiki/RGB_color_model) is
   widely used in digital displays
 - Each pixel is represented by three numbers, each ranging from 0 to 255
@@ -575,8 +575,8 @@ represented by a 1.
 
 :::{style="margin-top:40px; font-size: 25px;"}
 
-- Convert binary to hex by grouping into blocks of four bits.
-- Example: Binary `1001 1110 0000 1010` converts to Hex `9E0A` (9 + 14 + 0 + 10).
+- Convert binary to hex by grouping into blocks of four bits
+- Example: Binary `1001 1110 0000 1010` converts to Hex `9E0A` (9 + 14 + 0 + 10)
 
 <br>
 
@@ -603,12 +603,12 @@ represented by a 1.
   - FFFFFF = White
   - 000000 = Black
 
-- Each pair of digits represents a colour component (RGB).
+ - Each pair of digits represents a colour component (RGB)
   - 16 * 16 = 256, so two hex digits can represent values from 0 to 255
 
-- This gives a total of 256 intensity levels for each primary color.
+ - This gives a total of 256 intensity levels for each primary colour
 
-- When you combine the three channels, you get a possible color palette of $256^3$ or about 16.7 million colours
+- When you combine the three channels, you get a possible colour palette of $256^3$ or about 16.7 million colours
 :::
 
 ## Represent text as individual characters
@@ -740,9 +740,9 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 
 :::{style="margin-top:40px; font-size: 24px;"}
 
-- ASCII only includes unaccented characters.
-- Languages requiring accented characters cannot be represented.
-- Even English needs characters like ‘é’ for words such as ‘café’.
+- ASCII only includes unaccented characters
+- Languages requiring accented characters cannot be represented
+- Even English needs characters like ‘é’ for words such as ‘café’
 
 :::{style="margin-top:20px;"}
 - To address this, [Unicode](https://en.wikipedia.org/wiki/Unicode) was developed
@@ -750,7 +750,7 @@ Check it out here: [ASCII Table](https://www.asciitable.com/)
 - The Unicode system represents every character that can be typed into a
   computer. It uses up to 5 bytes, which can represent up to 1 trillion
   characters! 
-- UTF-8 stands for Transformation Format 8-bit
+- UTF-8 stands for Unicode Transformation Format 8-bit
 
 - Find all the Unicode characters here: <https://symbl.cc/en/unicode-table/>
   - "Danilo" in Unicode: `\u0044\u0061\u006e\u0069\u006c\u006f`

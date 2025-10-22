@@ -111,7 +111,7 @@ def my_map(function, array):
 my_map(bar, foo)
 ``` 
 
-- Python has a helpfully provided a `map` function in the standard library:
+- Python helpfully provides a `map` function in the standard library:
 
 ```{python}
 #| echo: true
@@ -129,7 +129,7 @@ list(map(bar, foo))
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width="50%"}
-- In the example we showed before, no step of the `map` call depend on the other steps
+- In the example we showed before, no step of the `map` call depends on the other steps
 - Rather than waiting for the function to loop over each value, we could create multiple instances of the function `bar` and apply it to each value simultaneously
 - There are several methods to achieve this, but we will use `joblib` for this purpose
 - The `Parallel` function from `joblib` is used to parallelise the task across as many jobs as we want
@@ -206,7 +206,7 @@ def calculation(size=10000000):
 
 - As you can see, the parallel version is much faster than the serial version
 - It is not exactly 4 times faster because there is some overhead in creating the parallel processes
-- But the different is still significant
+- But the difference is still significant
 :::
 :::
 :::
@@ -222,7 +222,7 @@ def calculation(size=10000000):
 #| echo: true
 #| eval: true
 #| cache: true
-# Import python image library functions
+# Import Python Image Library functions
 from PIL import Image
 
 from matplotlib.pyplot import imshow
@@ -266,13 +266,13 @@ def image_flipper(file_name):
     # extract the base file name
     base_name = file_name[0:-4]
     
-    # opens the file
+    # open the file
     im = Image.open( file_name )
 
-    # rotates by 180deg
+    # rotate by 180 degrees
     im_flipped = im.rotate(angle=180)
     
-    # Saves a PDF output with a new file name
+    # Save a PDF with a new file name
     im_flipped.save(base_name + "_flipped.pdf", format='PDF')
 
     return base_name + "_flipped.pdf"
@@ -326,7 +326,7 @@ Parallel(n_jobs=4)(delayed(image_flipper)(f) for f in file_list)
 ## Try it yourself! 🧠 {#sec:exercise01}
 
 :::{style="margin-top: 30px; font-size: 22px;"}
-- Install `joblib` and `numpy` if you haven't done so yet
+- Install `joblib` and `NumPy` if you haven't done so yet
   - `!pip install joblib numpy`
 - Compare the time of the serial and parallel versions of the following function:
 
@@ -733,7 +733,7 @@ df.to_csv('data/*.csv', name_function=name);
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 - We now have many CSV files in our `data` directory, one for each day in the month of January 2000
-- Each CSV file holds timeseries data for that day
+- Each CSV file holds time series data for that day
 - We can read all of them as one logical dataframe using the `dd.read_csv` function 
 
 ```{python}
@@ -896,8 +896,8 @@ dask.visualize(*dask_results)
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 - Parallel computing can be a powerful tool, but it is not always the best solution
-- So here are some times from the creators of Dask themselves:
-- [Start small]{.alert}:  NumPy, pandas, Scikit-learn may have faster functions for what you’re trying to do. Sometimes just by changing the data format to Parquet you can get a huge speedup
+- So here are some tips from the creators of Dask themselves:
+- [Start small]{.alert}:  NumPy, pandas, scikit-learn may have faster functions for what you’re trying to do. Sometimes just by changing the data format to Parquet you can get a huge speedup
 - [Sampling]{.alert}:  If you have a large dataset, try working with a sample of the data first. _Do you really need_ all those TBs of data? 
 - [Load data with Dask]{.alert}:  If you have a large dataset, load it with Dask from the start. It’s much easier to scale up than to scale down
 - [Use `.compute` and `.persist` sparingly]{.alert}:  These functions can be expensive, so use them only when you need to

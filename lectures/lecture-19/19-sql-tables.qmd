@@ -6,10 +6,10 @@ author:
     email: danilo.freire@emory.edu
     affiliations: "Department of Data and Decision Sciences <br> Emory University"
 format:
-  clean-revealjs:
-    self-contained: true
-    code-overflow: wrap
-    footer: "[SQL Joins](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-19/10-sql-tables.html)"
+    clean-revealjs:
+        self-contained: true
+        code-overflow: wrap
+        footer: "[SQL Joins](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-19/19-sql-tables.html)"
 transition: slide
 transition-speed: default
 scrollable: true
@@ -41,7 +41,7 @@ editor:
 :::{.column width="50%"}
 ### Today we will learn how to:
 
-- See different types of join in SQL
+- See different types of joins in SQL
 - Use special joins, such as `CROSS JOIN` and `SELF JOIN`
 - Merge tables by row with `UNION`, `INTERSECT`, and `EXCEPT`
 - Learn how to create `UPSERT` statements in SQLite
@@ -56,8 +56,8 @@ editor:
 ### Final project instructions
 
 :::{style="margin-top: 50px; font-size: 25px;"}
-- The instructions for the final project is now available on GitHub
-- Please find it here: <https://github.com/danilofreire/qtm350/blob/main/project/project-instructions.pdf>
+- The instructions for the final project are now available on GitHub
+- Please find it here: <https://github.com/danilofreire/qtm350/blob/main/project/project-instructions.qmd>
 - The project is due on [28th April, 2025]{.alert}
 - Groups of 3-4 students
 - You will create a GitHub repository with a report based on World Bank data
@@ -131,7 +131,7 @@ INSERT INTO players (player_name, goals, victories) VALUES
 ('Messi', 10, 5),
 ('Vini Jr', 8, 4),
 ('Neymar', 6, 3),
-('Mbappe', 5, 2),
+('Mbappé', 5, 2),
 ('Lewandowski', 4, 1),
 ('Haaland', 5, 3);
 ''')
@@ -213,33 +213,30 @@ ON players.player_id = teams.team_id;
 ```
 :::
 
-## Right join
+## Right join (emulated in SQLite)
 
 :::{style="margin-top: 50px; font-size: 21px;"}
 - The `RIGHT JOIN` returns all records from the right table (second table) and the matched records from the left table (first table).
-- The result is `NULL` for columns from the left side if there is no match.
-- As you have probably guessed, this is the opposite of the `LEFT JOIN` (and less common).
-- In our case, since `teams` has fewer rows than `players` and all `team_id`s match a `player_id`, the `RIGHT JOIN` looks the same as the `INNER JOIN`. 
+- SQLite does not implement `RIGHT JOIN`, so we emulate it by swapping tables in a `LEFT JOIN`.
+- In our case, since `teams` has fewer rows than `players` and all `team_id`s match a `player_id`, the emulated result looks the same as the `INNER JOIN`. 
 
 ```{python}
 #| echo: true
 #| eval: true
 pd.read_sql('''
 SELECT players.player_name, teams.team_name, players.goals
-FROM players
-RIGHT JOIN teams
+FROM teams
+LEFT JOIN players
 ON players.player_id = teams.team_id;
 ''', connection)
 ```
 :::
 
-## Full outer join
+## Full outer join (emulated in SQLite)
 
 :::{style="margin-top: 50px; font-size: 21px;"}
 - The `FULL OUTER JOIN` returns all records when there is a match in either the left (first) or right (second) table.
-- In my experience, this is the least common type of join.
-- Why? Because it returns all the data from both tables, which can be large and potentially less focused. It can also be more computationally intensive.
-- The syntax is: `SELECT columns FROM table1 FULL OUTER JOIN table2 ON table1.column = table2.column`
+- SQLite does not implement `FULL OUTER JOIN`. We can emulate it by taking a `LEFT JOIN` in both directions and combining with `UNION` (which removes duplicates).
 
 ```{python}
 #| echo: true
@@ -247,8 +244,16 @@ ON players.player_id = teams.team_id;
 pd.read_sql('''
 SELECT players.player_name, teams.team_name, players.goals
 FROM players
-FULL OUTER JOIN teams
-ON players.player_id = teams.team_id;
+LEFT JOIN teams
+ON players.player_id = teams.team_id
+
+UNION
+
+SELECT players.player_name, teams.team_name, players.goals
+FROM teams
+LEFT JOIN players
+ON players.player_id = teams.team_id
+ORDER BY player_name;
 ''', connection)
 ```
 :::
@@ -321,7 +326,7 @@ print("Tables 'products' and 'reviews' created and populated.")
 - `CROSS JOIN` is available in SQL, including SQLite.
 - A cross join does not use any comparisons (like `ON`) to match rows.
 - Instead, the result is constructed by pairing *every* row from the first table with *every* row from the second table (Cartesian product).
-- Useful for generating all possible combinations (e.g., pairing all sizes with all colors).
+- Useful for generating all possible combinations (e.g., pairing all sizes with all colours).
 
 ```{python}
 #| echo: true
@@ -722,7 +727,7 @@ ORDER BY
 :::
 
 
-## Appendix 03 {#sec:appendix05}
+## Appendix 03 {#sec:appendix03}
 ### Cleaning the SQLite database
 
 :::{style="margin-top: 50px; font-size: 22px;"}

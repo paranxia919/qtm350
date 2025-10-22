@@ -101,7 +101,7 @@ Think again...
 - The idea is to treat [code as a form of literature]{.alert}, where the code is interspersed with explanations and documentation
 - The goal is to make the code more [readable and understandable]{.alert} to humans
 - Requires two processing steps: [weaving and tangling]{.alert}
-  - Weaving: converts the literate programme into a document
+  - Weaving: converts the literate program into a document
   - Tangling: extracts the code from the document
 - Literate programming improves code quality by requiring programmers to articulate their reasoning, thus [showing flawed design choices]{.alert}
 :::
@@ -133,7 +133,7 @@ Think again...
 - Jupyter works with many languages, but it's not very good for writing reports or papers
 - [Enter Quarto](https://quarto.org/), a new tool that combines the best of both worlds
 - Quarto is language-agnostic, meaning you can use it with many languages, such as R, Python, Observable, and Julia
-- Quarto is also more powerful than R Markdown and Jupyter, as it allows you to write reports in many formats (HTML, PDF, Word, epubs, etc.)
+- Quarto is also more powerful than R Markdown and Jupyter, as it allows you to write reports in many formats (HTML, PDF, Word, EPUBs, etc.)
 - As you may have noticed, all my slides, the website, and the course PDFs are written in Quarto
 - Programmers are lazy: [learn it once, use it everywhere!]{.alert}
 :::
@@ -230,7 +230,7 @@ You can also download and install Quarto using:
 
 :::{.columns}
 ::: {.column width="50%"}
-- [Homebrew](https://brew.sh/) (macOS/linux)
+- [Homebrew](https://brew.sh/) (macOS/Linux)
 
 ```{.bash filename="Bash"}
 brew install --cask quarto
@@ -312,7 +312,7 @@ quarto check
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 - Quarto comes with Pandoc, so you don't need to install it separately
-- However, if you want to render PDF files, you need to install a LaTeX
+- However, if you want to render PDF files, you need to install a LaTeX distribution
 - I recommend [TinyTeX](https://yihui.org/tinytex/), which is a lightweight, portable, cross-platform, and easy-to-maintain LaTeX distribution
 
 ```{bash}
@@ -384,14 +384,14 @@ demo/Default
 ## Quarto projects: `default`
 
 :::{style="margin-top: 30px; font-size: 24px;"}
-- `_quarto.yml`: project configuration file.
+- `_quarto.yml`: project configuration file
 
 ```markdown
 project:
   title: "Default"
 ```
 
-- `Default.qmd`: default Quarto document.
+- `Default.qmd`: default Quarto document
 
 ```markdown
 ---
@@ -681,7 +681,7 @@ quarto render file.qmd --to html
 :::{.column width="50%"}
 -   "Yet another markup language"
 -   Metadata of your document
--   Demarcated by three dashes (`---`) on either end
+-   Demarcated by three dashes (`---`) at either end
 -   Uses key-value pairs in the format `key: value`
 - We include the title, format, author, and other metadata in the YAML header
 

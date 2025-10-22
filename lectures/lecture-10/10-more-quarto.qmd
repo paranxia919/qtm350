@@ -226,8 +226,8 @@ source ~/.bashrc
 :::{.columns}
 :::{.column width="30%"}
 - You just have to add a YAML header to your notebook
-- Quarto will convert it to html, pdf, or other formats
-- `quarto render notebook.ipynb --to html` will convert a notebook to html
+- Quarto will convert it to HTML, PDF, or other formats
+- `quarto render notebook.ipynb --to html` will convert a notebook to HTML
 - You can add `--execute` to run the code
 - Benefits: 
   - Easy to host
@@ -299,7 +299,7 @@ source ~/.bashrc
 :::
 
 :::{.column width="50%"}
-- The easiest way to manage references is with a reference manager like [Zotero](https://www.zotero.org/) or download a BibTex reference from Google Scholar
+- The easiest way to manage references is with a reference manager like [Zotero](https://www.zotero.org/) or download a BibTeX reference from Google Scholar
 - Just search for a paper and click on the `cite` button
 - Then click on `BibTeX` and copy the reference to your `.bib` file
 :::
@@ -414,7 +414,7 @@ format:
 :::{.column width="50%"}
 - You can also create slides with Quarto! 🎉
 - Quarto has several advantages:
-  - Over R Markdown: more flexibility, more languages, Revealjs support
+  - Over R Markdown: more flexibility, more languages, reveal.js support
   - Over PowerPoint: plain text, easier to share, easier to host, version control
   - Over Google Slides: version control, offline access, more flexibility
   - Over Beamer: Oh my God, so much easier! 😅
@@ -444,7 +444,7 @@ format:
 - Add your content in Markdown
 - `#` creates a new section, `##` a new slide
 - Quarto uses `:::` to create and end a new "element" in the slides. For instance, to create columns, change font size, centre text, etc.
-  - If you know html, this is the same as creating `div` elements (e.g., `<div class="columns"> </div>`)
+  - If you know HTML, this is the same as creating `div` elements (e.g., `<div class="columns"> </div>`)
 - You can add code chunks, images, tables, and references
 - To render the slides, use the `quarto` command:
   - `quarto render slides.qmd --to revealjs`
@@ -479,7 +479,7 @@ format:
   - GitHub: you can create a repository and upload the files
   - [Githack](https://raw.githack.com/): you can upload the files and get a link to share
 
-- [GitHack](https://raw.githack.com/) is the easiest: you just paste the link to the `.html` file in your repository and it will create a link for you
+- [Githack](https://raw.githack.com/) is the easiest: you just paste the link to the `.html` file in your repository and it will create a link for you
 - On GitHub, you have to publish the repository and go to the settings to enable GitHub Pages (more on this later)
 :::
 
@@ -577,7 +577,7 @@ format:
 :::{style="margin-top: 30px; font-size: 23px;"}
 - Your project is now created! 🎉
 - You can see the structure of the website in the sidebar
-- Click on `Preview` button to see the website (first button on the right)
+- Click the `Preview` button to see the website (first button on the right)
 - You can add new pages, change the theme, and customise the website as you like
 - Let's see how to do that!
 
@@ -775,7 +775,7 @@ We will meet every Monday and Wednesday [...]
 ![](figures/website-qtm350.png)
 :::
 
-## And voi-là! 🎉
+## Et voilà! 🎉
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 ![](figures/voila.png)

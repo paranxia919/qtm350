@@ -9,7 +9,7 @@ format:
   clean-revealjs:
     self-contained: true
     code-overflow: wrap
-    footer: "[Containers](https://raw.githack.com/danilofreire/qtm350/main/lectures/lecture-23/23-containers.html)"
+    footer: "[Containers](23-containers.html)"
 transition: slide
 transition-speed: default
 scrollable: true
@@ -32,7 +32,7 @@ editor:
 - We discussed how to parallelise the training of machine learning models
 - How to use automated machine learning (AutoML) tools to speed up the process
 - We also discussed how to implement different methods to search for the best hyperparameters using TPOT, scikit-learn, and Dask
-- Finally, we learnt about [Dask Clusters](https://docs.dask.org/en/latest/setup/clusters.html), which allow us to scale your computations across multiple cores or machines
+- Finally, we learnt about [Dask Clusters](https://docs.dask.org/en/latest/setup/clusters.html), which allow you to scale your computations across multiple cores or machines
 :::
 
 :::{.column width="50%"}
@@ -101,7 +101,7 @@ editor:
 - As we have seen in this course (and in many others), [libraries and packages change constantly]{.alert}
 - New versions are released, old versions are deprecated, and not all operating systems have the required libraries installed to run your code
 - Even extremely simple code can break from one version of a library to the next
-- this code written in Python 2.7:
+- This code written in Python 2.7:
 
 ```{python}
 #| echo: true
@@ -172,7 +172,7 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello w
 - [Due diligence starts at declaring dependencies]{.alert}
 - You can empower your declared dependencies with a package/environment manager such as `conda` or `pip`
 - Packaging dependencies uses tools like `renv` (for R), or `pipenv` (for Python)
-- Online environments can be created for your work (in a relatively user friendly way), such as [Code Ocean](https://codeocean.com/) ($$$), or [Binder](https://mybinder.org/) (free, but with several limitations)
+- Online environments can be created for your work (in a relatively user-friendly way), such as [Code Ocean](https://codeocean.com/) ($$$), or [Binder](https://mybinder.org/) (free, but with several limitations)
 - [Containers are awesome]{.alert}, and container tools like [Docker](https://www.docker.com/) and [Singularity](https://sylabs.io/singularity/) can be used to package your code and dependencies in a portable way
 - Which one should you use? It depends on your needs, but the more integrated your workflow is, the better!
 :::
@@ -182,11 +182,10 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello w
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width="50%"}
-- At the very least, you should declare (in your `README.md`) how your project works [for you]{.alert}
-  - What language, what version?
-  - What packages/libraries do you load
+ We have successfully created a container with Python, NumPy, pandas, and matplotlib installed, and we have run a Python script
+  - What packages/libraries do you load?
   - What OS do you use? (Does it work on your collaborator’s system?)
-  - What data do you use?
+ Now we just need to activate the environment:
   - What are the steps to reproduce your results?
 
 - However, it is better to use a package manager to declare your dependencies
@@ -573,8 +572,8 @@ pipenv install --ignore-pipfile
 :::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width="50%"}
-- [Docker](https://www.docker.com/) is the leading containerisation platform, mainly in the industry
-- Other software like [Singulariy](https://sylabs.io/singularity/) is used in more niche applications, such as high-performance computing, but has a smaller user base
+- [Docker](https://www.docker.com/) is the leading containerisation platform, especially in industry
+- Other software like [Singularity](https://sylabs.io/singularity/) is used in more niche applications, such as high-performance computing, but has a smaller user base
 - The main entities in Docker are [containers](https://www.docker.com/resources/what-container), [images](https://www.docker.com/resources/what-container), and [registries](https://www.docker.com/resources/what-container-registry)
 - [A container]{.alert}, as we have just seen, is an executable package of software that includes everything needed to run an application
 - [An image is a snapshot of a container]{.alert}. Images are created with the `build` command, and they will produce a container when started with `run`. More about the distinction [here](https://stackoverflow.com/questions/23735149/what-is-the-difference-between-a-docker-image-and-a-container)
@@ -584,7 +583,7 @@ pipenv install --ignore-pipfile
 
 :::{.column width="50%"}
 - To install Docker, you can follow the instructions [here](https://docs.docker.com/get-docker/)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) is the easiest way to get started with Docker on Windows and Mac, and it included everything you need to run Docker on your machine
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) is the easiest way to get started with Docker on Windows and macOS, and it includes everything you need to run Docker on your machine
 - It is a good idea to create an account too, as you can use it to store your images in [Docker Hub](https://hub.docker.com/)
 - After you have installed Docker, you can run the following command to check if it is working:
 
@@ -628,9 +627,9 @@ Docker version 27.3.1, build ce12230
 :::{.columns}
 :::{.column width="70%"}
 - Docker can seem a little daunting at first
-- We need to create and configure a `dockerfile` to build an image, which is a plain-text recipe that will build from scratch everything you need to recreate a project
-- It is just a textfile that you can put under version control
-- Then we need to run the dockerfile to generate a Docker image
+- We need to create and configure a `Dockerfile` to build an image, which is a plain-text recipe that will build from scratch everything you need to recreate a project
+- It is just a text file that you can put under version control
+- Then we need to use the Dockerfile to generate a Docker image
 - However, in most cases [you do not need to start from scratch]{.alert}
 - [Docker Hub](https://hub.docker.com/) has thousands of images that you can use as a base for your project, and it is very likely that someone has already created an image similar to the one you need
 - For example, as of today there are [~7,600 images of data science tools](https://hub.docker.com/search?categories=Data+Science) in Docker Hub

@@ -26,7 +26,7 @@ editor:
 ### In our last class, we covered
 
 :::{style="margin-top: 30px; font-size: 21px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - How to think in terms of projects
 - File and folder organisation tips
@@ -52,7 +52,7 @@ editor:
 ## Lecture overview
 
 :::{style="margin-top: 30px; font-size: 21px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 Today we will cover
 
@@ -80,7 +80,7 @@ Today we will cover
 ## Pushing changes to a remote repository
 
 :::{style="margin-top: 30px; font-size: 24px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - Last class, we learned how to `add` and `commit` changes
 - But what if we want to share our changes with others? 🤔
@@ -121,7 +121,7 @@ Today we will cover
 ## Now, let's push our changes to GitHub
 
 :::{style="margin-top: 30px; font-size: 21px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - Why do we need to add a remote repository?
 - Because we need to tell Git where to `push` our changes!
@@ -153,7 +153,7 @@ Today we will cover
 ## How to pull changes from a remote repository
 
 :::{style="margin-top: 30px; font-size: 23px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - To `push` further changes to the remote repository, you just repeat the process:
   - `git add file-name`
@@ -180,7 +180,7 @@ Today we will cover
 ## Adding `.gitignore` to our repository
 
 :::{style="margin-top: 30px; font-size: 22px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - I will go to my repository on GitHub and click on `Add file` > `Create new file`
 - After adding the file, I will commit the changes
@@ -204,7 +204,7 @@ Today we will cover
 # Pulling changes 
 
 :::{style="margin-top: 30px; font-size: 21px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - Now, let's `pull` the changes to my local computer
 - Just type `git pull` and the changes will be downloaded and merged
@@ -222,7 +222,7 @@ Today we will cover
 ## But wait a minute! 🤔
 
 :::{style="margin-top: 30px; font-size: 21px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - What if both my coauthors and I change the same line of code?
 - If you change different files or lines in the same file, Git will merge the changes automatically 👍
@@ -245,7 +245,7 @@ Today we will cover
 ## Changing the same file on GitHub
 
 :::{style="margin-top: 30px; font-size: 24px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - I've changed the same line of code on GitHub
 
@@ -267,7 +267,7 @@ Today we will cover
 ## Resolving conflicts
 
 :::{style="margin-top: 30px; font-size: 23px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - To resolve the conflict, you need to open the file in a text editor
 - You will see the changes from both you and your coauthor (or yourself)
@@ -297,7 +297,7 @@ Today we will cover
 ## Resolving conflicts
 
 :::{style="margin-top: 30px; font-size: 23px;"}
-:::{.colunms}
+:::{.columns}
 :::{.column size="50%"}
 - Now the conflict is resolved! 🥳
 

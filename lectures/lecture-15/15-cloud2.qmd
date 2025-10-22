@@ -37,7 +37,6 @@ editor:
 - Enterprise case studies:
   - [Animoto]{.alert}: Scaled from 50 to 3,500 EC2 instances during viral Facebook app growth
   - [Washington Post]{.alert}: Processed 17,481 pages of Clinton schedules in 9 hours using 200 EC2 instances
-  - [Netflix]{.alert}: Migrated entirely to AWS for global video streaming infrastructure
 :::
 
 :::{.column width="50%"}
@@ -105,7 +104,7 @@ editor:
 - AWS architecture components:
   - [EC2]{.alert}: Resizable compute capacity with auto-scaling
   - [S3]{.alert}: 11x9s durability object storage with lifecycle policies
-  - [RDS]{.alert}: Managed relational databases (PostgreSQL/MySQL, etc)
+  - [RDS]{.alert}: Managed relational databases (PostgreSQL/MySQL, etc.)
   - [SageMaker]{.alert}: ML workflows with Jupyter integration
 - Cost management:
   - [Always configure billing alarms and budget limits!]{.alert}
@@ -132,7 +131,7 @@ editor:
   - Connecting via SSH with [key pairs]{.alert}
 
 - Essential [Linux commands]{.alert} for instance management:
-  - Package management: `apt update`, `apt upgrade`, apt install`
+  - Package management: `apt update`, `apt upgrade`, `apt install`
   - File operations: `scp` and `chmod`
 
 - Activity 01: Launching a [Jupyter notebook]{.alert} on an EC2 instance
@@ -166,14 +165,14 @@ editor:
 :::{.column width="50%"}
 - Just to recap: [EC2]{.alert} is a virtual server in the cloud
 - Each instance has a full [OS]{.alert} and can run any software
-  - The vast majority of instances run [Linux]{.alert} ([Ubuntu](https://ubuntu.com/), [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/), etc)
+  - The vast majority of instances run [Linux]{.alert} ([Ubuntu](https://ubuntu.com/), [Amazon Linux](https://aws.amazon.com/linux/amazon-linux-2023/), etc.)
 - [Virtualisation]{.alert} allows multiple instances on the same hardware
   - A [virtual machine](https://www.datacamp.com/blog/what-is-a-virtual-machine) is a software emulation of a physical computer
   - [Hypervisors](https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor) manage VMs and allocate resources
 - [Instance types]{.alert} vary in CPU, memory, storage, and network capacity
   - [T2]{.alert} instances are general-purpose, [M5]{.alert} are memory-optimised, etc
   - You can change instance types on-the-fly
-- The [free tier](https://aws.amazon.com/free/) offers [750 hours]{.alert} of t2.micro instances per month, 1Gb of RAM, and 30Gb of storage
+- The [free tier](https://aws.amazon.com/free/) offers [750 hours]{.alert} of t2.micro instances per month, 1 GB of RAM, and 30 GB of storage
 :::
 
 :::{.column width="50%"}
@@ -193,6 +192,7 @@ Source: [DataCamp](https://www.datacamp.com/blog/what-is-a-virtual-machine)
 :::{.column width="50%"}
 - [Linux]{.alert} is a popular open-source operating system
 - They are popular [precisely because they are free]{.alert}, but they are also [more secure]{.alert} than Windows and can be [customised]{.alert} to your needs (in contrast to MacOS)
+ - They are popular [precisely because they are free]{.alert}, but they are also [more secure]{.alert} than Windows and can be [customised]{.alert} to your needs (in contrast to macOS)
 - The most widely used Linux distribution is [Ubuntu](https://ubuntu.com/)
   - [Debian](https://www.debian.org/)-based, with a focus on usability and security
   - [Long-term support (LTS)](https://ubuntu.com/about/release-cycle) versions are supported for 5 years
@@ -248,24 +248,22 @@ Source: [DataCamp](https://www.datacamp.com/blog/what-is-a-virtual-machine)
 
 ## Windows Subsystem for Linux (WSL)
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width="50%"}
-- [WSL](https://docs.microsoft.com/en-us/windows/wsl/) is a compatibility layer for running Linux binary executables natively on Windows
-- It allows you to run a full-fledged Ubuntu terminal on Windows
-- [I strongly recommend using WSL]{.alert} if you want to use a bash-like terminal
+- [WSL](https://docs.microsoft.com/en-us/windows/wsl/) is nothing but Ubuntu running natively on Windows!
 - I hope many of you have already installed it! 😊
-- More about WSL here: <https://learn.microsoft.com/en-us/windows/wsl/install>
-- If you work with WSL, [make sure to store your SSH key file under your Ubuntu home directory]{.alert}
-- Windows FS does not work well with `chmod 400`
-- How to locate your `/home/user` directory is by typing `cd` and that will automatically bring you to your home dir
+- If you work with WSL, [make sure to store your SSH key file in your Ubuntu home directory]{.alert}
+- That's because Windows FS does not work well with `chmod 400` (which is required to set the correct permissions on your key file)
+- To locate your `/home/user` directory, type `cd ~` and then `pwd` in your WSL terminal
+- You can then move your key file there using Windows Explorer or the `mv` command in WSL
 :::
 
 :::{.column width="50%"}
 :::{style="text-align: center;"}
 ![](figures/wsl.jpg){width=100%}
 
-Ubuntu on Windows (WSL)
+[Ubuntu on Windows (WSL)](https://ubuntu.com/wsl)
 :::
 :::
 :::
@@ -281,8 +279,8 @@ Ubuntu on Windows (WSL)
 - You will see the EC2 Dashboard, with a big orange button saying "Launch Instance"
 - Click on it, and you will be taken to the [AMI (Amazon Machine Image)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) selection page
 - There, we will choose an Ubuntu AMI (free tier eligible)
-- Amazon has [thousands of AMIs]{.alert} available, including Windows, MacOS, and other Linux distributions
-- Many are already pre-configured to run specific software (e.g. [Jupyter](https://jupyter.org/), [TensorFlow](https://www.tensorflow.org/), [Docker](https://www.docker.com/), etc)
+ - Amazon has [thousands of AMIs]{.alert} available, including Windows, macOS, and other Linux distributions
+ - Many are already pre-configured to run specific software (e.g. [Jupyter](https://jupyter.org/), [TensorFlow](https://www.tensorflow.org/), [Docker](https://www.docker.com/), etc.)
 :::
 
 :::{.column width="60%"}
@@ -319,7 +317,7 @@ Ubuntu on Windows (WSL)
 :::
 :::
 
-## Steps 03: Choose an SSH key pair 
+## Step 03: Choose an SSH key pair 
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
@@ -346,7 +344,7 @@ Ubuntu on Windows (WSL)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width="40%"}
-- Under `Network settings`, you may check `Allow HTTPs traffic from the internet` and `Allow HTTP traffic from the internet` so that you can access the web servers hosted on your EC2 VM
+- Under `Network settings`, you may check `Allow HTTPS traffic from the internet` and `Allow HTTP traffic from the internet` so that you can access the web servers hosted on your EC2 VM
 - We will allow all traffic for now, but in a production environment, you should [restrict traffic to only what is necessary]{.alert}
 - Why so? [Security]{.alert}! The more open ports you have, the more vulnerable your instance is to attacks
 - You can always [edit the security group later]{.alert} to add or remove rules
@@ -370,7 +368,7 @@ Ubuntu on Windows (WSL)
 - The free tier gives you [30 GB of storage]{.alert}, so you can increase the size to 30 GB
 - You can also add additional volumes if you need more storage
 - `gp3` is the default volume type, and it works fine for most use cases
-- `io2` is the fastest and most expensive volume type, usually used for high-performance databases (which require milisecond latency)
+- `io2` is the fastest and most expensive volume type, usually used for high-performance databases (which require millisecond latency)
 - If you have data that is not frequently accessed, you can use `sc1` or `st1` for cost savings
 :::
 
@@ -388,7 +386,7 @@ Ubuntu on Windows (WSL)
 :::
 :::
 
-## Step 06: Login to the EC2 instance through SSH
+## Step 06: Log in to the EC2 instance through SSH
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
@@ -445,7 +443,7 @@ Ubuntu on Windows (WSL)
 :::{.column width="50%"}
 - If you don't have access to a terminal, you can use [CloudShell](https://aws.amazon.com/cloudshell/)
 - CloudShell is a browser-based shell that you can use to run commands on your instances
-- You can find it on the AWS Console, on the [bottom left corner]{.alert}
+- You can find it on the AWS Console, in the [bottom left corner]{.alert}
 - It is a great way to run commands on your instances without having to install anything on your local machine
 - You can also use it to run commands on your S3 buckets, RDS databases, and other AWS services
 - I recommend using [your local terminal]{.alert} as you can write code in your local IDE and run it on the cloud
@@ -488,7 +486,7 @@ Ubuntu on Windows (WSL)
 
 ## Adding files to your instance
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width="40%"}
 - You can add files to your instance using `scp` (secure copy)
@@ -500,7 +498,7 @@ Ubuntu on Windows (WSL)
 :::
 
 :::{.column width="60%"}
-- Open a new terminal ([not the one you are using to connect to your instance]{.alert}) and type the following
+- Open a [new bash/zsh local terminal]{.alert} (not the one you are using to connect to your instance) and type the following (one line at a time):
 
 ```verbatim
 echo "print('Hello, QTM350!')" > hello.py
@@ -510,11 +508,12 @@ scp -i qtm350.pem hello.py ubuntu@XXXXXX.compute-1.amazonaws.com:~
 ![](figures/scp.png){width=100%}
 :::
 
-- Don't forget to replace `XXXXXX` with your public IP and `~` with the path to your home directory
+- [Don't forget to replace `XXXXXX` with your public IP]{.alert} and note that [`:~` is your home directory on the instance]{.alert}
+- You can find your public IP on the AWS Console, on the Instances page. It's the same you copied in the "Example" command when connecting via SSH
 - You can check (`ls`) and run (`python3`) the file on your instance
 
 :::{style="text-align: center;"}
-![](figures/hello.png){width=100%}
+![](figures/hello.png){width=70%}
 ::: 
 :::
 :::
@@ -553,7 +552,7 @@ scp -i qtm350.pem hello.py ubuntu@XXXXXX.compute-1.amazonaws.com:~
   - `sudo apt install python3-notebook`
   - `source ~/.profile`
 - Test it with `which python3`, `which pip3`, and `which jupyter`
-- Open a new terminal and type this to forward your connection to port `8000`
+- Open a new bash/zsh terminal locally, and type this to forward your connection to port `8000`
   - `ssh -i "<your-key>.pem" ubuntu@<public_IPv4_DNS_address_of_your_EC2_instance> -L 8000:localhost:8888`
 - Start your Jupyter notebook with `jupyter notebook`
 - Open your browser and go to `http://localhost:8000`
@@ -574,7 +573,7 @@ source ~/.profile
 which python3
 which pip3
 which jupyter
-ssh -i qtm350.pem ubuntu@XXXXX -L 8000:localhost:8888
+ssh -i your-key.pem ubuntu@XXXXX -L 8000:localhost:8888
 jupyter notebook
 ```
 :::
@@ -648,7 +647,7 @@ print("Weather data saved to weather_data.txt")
 - Upload the dataset to your EC2 instance:
   - `scp -i <your-key>.pem weather_data.txt ubuntu@<your-instance-ip>:~/`
 
-- Create a another Python script to analyse the data:
+- Create another Python script to analyse the data:
 - Either create a new file on your local machine or use the code: [weather_analysis.py](https://github.com/danilofreire/qtm350/blob/main/lectures/lecture-15/weather_analysis.py)
 
 ```python
@@ -754,13 +753,13 @@ This workflow is similar to how data scientists use cloud resources for larger d
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width="50%"}
-- Today we learned how to launch an [EC2 instance]{.alert} on AWS
+- Today we learnt how to launch an [EC2 instance]{.alert} on AWS
 - We connected to our instance using [SSH]{.alert} and installed software
 - We ran a [Jupyter notebook]{.alert} on our instance and forwarded the connection to our local machine
 - We also uploaded a dataset, analysed it, and downloaded the results
-- We learned how to use [scp]{.alert} to copy files between our local machine and our instance
-- And we learned how to [stop and terminate]{.alert} our instance
-- I hope you enjoyed the class and learned something new today! 🚀
+- We learnt how to use [scp]{.alert} to copy files between our local machine and our instance
+- And we learnt how to [stop and terminate]{.alert} our instance
+- I hope you enjoyed the class and learnt something new today! 🚀
 :::
 
 :::{.column width="50%"}

@@ -41,11 +41,12 @@ editor:
 - macOS organises files and applications in a hierarchical folder structure 
 - Key system folders: `Applications`, `Library`, `System`, `Users`
 - The Users folder contains individual home folders for each user
-- Your home folder (e.g., `/Users/yourusername/`) contains personal folders like `Documents`, `Desktop`, `Downloads` - Access folders via Terminal:
+- Your home folder (e.g., `/Users/yourusername/`) contains personal folders such as `Documents`, `Desktop`, and `Downloads`
+- Access folders via the Terminal:
   - Open Terminal (`Applications > Utilities > Terminal`)
-  - Use `cd` command to navigate: `cd ~/Documents`
-  - List contents with `ls` command
-  - View current location with `pwd` command
+  - Use the `cd` command to navigate: `cd ~/Documents`
+  - List contents with the `ls` command
+  - View your current location with the `pwd` command
 - Common shortcuts:
   - `~` represents your home folder
   - `/` represents the root directory
@@ -174,7 +175,7 @@ Source: [Taulli (2024)](https://www.oreilly.com/library/view/ai-assisted-program
 - [Tokenisation](https://en.wikipedia.org/wiki/Tokenization_(lexical_analysis)) is the process of breaking text into smaller units called tokens, and each token is assigned a unique ID
   - For example, "`Chatbots are helpful in 2025!`" = `["Chat", "bots", "are", "help", "ful", "in", "2025", "!"]`
 - The main objective during training is for the model to [predict the next token in a sequence]{.alert} based on the tokens that come before it
-- This allows the model to [learn language patterns without needing labeled data]{.alert}
+- This allows the model to [learn language patterns without needing labelled data]{.alert}
 :::
 :::
 
@@ -540,7 +541,7 @@ Source: <https://help.openai.com/en/articles/6654000-best-practices-for-prompt-e
 - If you press `Ctrl + I` (Windows/Linux) or `Cmd + I` (macOS), a text box will appear into which you can write a prompt
 - Copilot will suggest new code, or changes to existing code based on this prompt
 - These may be in the form of one or more proposed changes
-- You may choose to accept ach of these changes by clicking the Accept or Discard buttons
+- You may choose to accept each of these changes by clicking the Accept or Discard buttons
 
 ![](figures/bubble_sort.png)
 :::
@@ -562,7 +563,7 @@ Source: <https://help.openai.com/en/articles/6654000-best-practices-for-prompt-e
 - You can access these in the `Ctrl + I` interface by typing a forward slash, then the name of the command. These are:
  - `/doc`: This will ask Copilot to generate documentation for the selected code. This will suggest changes in the editor 
  - `/explain`: This will ask Copilot to explain the selected code. It will do this in the Copilot Chat extension
- - `/fix` will look for problems in the selected code and suggest fixes for them in the editor.
+ - `/fix` will look for problems in the selected code and suggest fixes for them in the editor
  - `/tests` will ask Copilot to generate tests for the selected code. This will suggest changes in the editor, which may include creating a new file for the tests
 
 - You can also find these options by right-clicking a highlighted piece of code, and going into the Copilot menu
@@ -654,7 +655,7 @@ were changed?
 :::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width="50%"}
-- As always, there's a [VSCode Extension for GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces)
+- As always, there’s a [VS Code extension for GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces)
 - You can use it to easily create, manage, and connect to Codespaces from within VSCode
 - You can also use our friend `GitHub CLI` to manage Codespaces from the command line
 

@@ -452,7 +452,7 @@ ls project/docs
 
 :::{.column width="50%"}
 - The `tree` command is a useful tool for visualising the directory structure of a project
-- You can install in on MacOS with `brew install tree` and on Linux/WSL with `sudo apt-get install tree`
+- You can install it on macOS with `brew install tree` and on Linux/WSL with `sudo apt-get install tree`
   - [More information here](https://github.com/Old-Man-Programmer/tree)
 
 ```{bash, echo=TRUE}
@@ -943,12 +943,12 @@ If you want to dig deeper, check out
 - We can use `>` and `>>` to redirect output to a file
 - The pipe operator `|` allows us to chain commands together
 - Shells also allows `for` loops to iterate over a list of items
-- Shell scripts are a great tool to automate tasks (and the're quite fast too!)
+- Shell scripts are a great tool to automate tasks (and they're quite fast too!)
 :::
 
 # And that's all for today! 🥳 {background-color="#2d4563"}
 
-# Thank you very much and see you next weel! 😊 🙏🏼{background-color="#2d4563"}
+# Thank you very much and see you next week! 😊 🙏🏼{background-color="#2d4563"}
 
 ## Appendix 01: Solution to the exercise {#sec-appendix-01}
 
