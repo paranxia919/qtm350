@@ -192,7 +192,6 @@ Source: [DataCamp](https://www.datacamp.com/blog/what-is-a-virtual-machine)
 :::{.column width="50%"}
 - [Linux]{.alert} is a popular open-source operating system
 - They are popular [precisely because they are free]{.alert}, but they are also [more secure]{.alert} than Windows and can be [customised]{.alert} to your needs (in contrast to MacOS)
- - They are popular [precisely because they are free]{.alert}, but they are also [more secure]{.alert} than Windows and can be [customised]{.alert} to your needs (in contrast to macOS)
 - The most widely used Linux distribution is [Ubuntu](https://ubuntu.com/)
   - [Debian](https://www.debian.org/)-based, with a focus on usability and security
   - [Long-term support (LTS)](https://ubuntu.com/about/release-cycle) versions are supported for 5 years
