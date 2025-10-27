@@ -70,6 +70,18 @@ AWS Support Center
 :::
 :::
 
+## Final project instructions
+
+:::{style="margin-top: 50px; font-size: 25px;"}
+- The instructions for the final project are now available on GitHub
+- Please find it here: <https://github.com/danilofreire/qtm350/blob/main/project/project-instructions.pdf>
+- The project is due on [December 8, 2025]{.alert}
+- Groups of 4-5 students
+- You will create a GitHub repository with a report based on World Bank data
+- The report should be in Quarto, the data cleaning and descriptive statistics in SQL, and the data analysis and visualisation in Python
+- Please let me know if you have any questions!
+:::
+
 # Today's lecture 📚 {background-color="#2d4563"}
 
 ## Today's agenda
