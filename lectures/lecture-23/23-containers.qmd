@@ -26,13 +26,13 @@ editor:
 
 ## Parallel computing with Dask
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width="50%"}
-- We discussed how to parallelise the training of machine learning models
+- First, we learnt about [Dask Clusters](https://docs.dask.org/en/latest/setup/clusters.html), which allow you to scale your computations across multiple cores or machines
+- We saw how to parallelise the training of machine learning models
 - How to use automated machine learning (AutoML) tools to speed up the process
 - We also discussed how to implement different methods to search for the best hyperparameters using TPOT, scikit-learn, and Dask
-- Finally, we learnt about [Dask Clusters](https://docs.dask.org/en/latest/setup/clusters.html), which allow you to scale your computations across multiple cores or machines
 :::
 
 :::{.column width="50%"}
@@ -51,12 +51,12 @@ editor:
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width="45%"}
-- Today we will talk about a different topic: how to make sure your results are reproducible?
-- We will discuss the importance of dependency management, virtual environments, and containers
-- Replication has been a recurring theme in this course, and today we will learn how to make it easier
+- Today we will talk about a different topic: [how to make sure your results are reproducible?]{.alert}
+- We will discuss the importance of [dependency management, virtual environments, and containers]{.alert}
+- [Replication has been a recurring theme]{.alert} in this course, and today we will learn how to make it easier
 - That is the main reason why we use the command line, git, Quarto, Jupyter, and other tools
-- So today we will discuss some of the best practices to ensure computational reproducibility
-- We will also discuss how to use containers to make your code portable, reproducible, and scalable
+- So today we will discuss some of the [best practices to ensure computational reproducibility]{.alert}
+- We will also discuss how to use [containers]{.alert} to make your code portable, reproducible, and scalable
 - Let's get started! 🚀
 :::
 
@@ -72,7 +72,7 @@ editor:
 
 ## Congratulations! 🎉
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width="50%"}
 - [You now have a project!]{.alert}
@@ -80,7 +80,7 @@ editor:
 - Are you done? 🤔
 - [Not quite!]{.alert} 😅
 - What if you need to run your code on a different machine? Or share it with a colleague? Or run it again in a few months?
-- You need to make sure your code will run in the future, and that's where dependency management comes in
+- You need to [make sure your code will run in the future]{.alert}, and that's where dependency management comes in
 :::
 
 :::{.column width="50%"}
@@ -93,7 +93,7 @@ editor:
 
 ## Why do we need dependency management? 🤔
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width="50%"}
 ### The problem
@@ -163,15 +163,15 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello w
 
 ## The reproducibility trade-off 🔄
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{style="text-align: center;"}
 ![](figures/trade-off.png){width='80%'}
 :::
 
 - How far should we go to ensure that our results are reproducible?
 - [Due diligence starts at declaring dependencies]{.alert}
-- You can empower your declared dependencies with a package/environment manager such as `conda` or `pip`
-- Packaging dependencies uses tools like `renv` (for R), or `pipenv` (for Python)
+- You can [manage your declared dependencies]{.alert} with a package/environment manager such as `conda` or `pip`
+- You can also [package your dependencies]{.alert} with tools like `renv` (for R), or `pipenv` (for Python)
 - Online environments can be created for your work (in a relatively user-friendly way), such as [Code Ocean](https://codeocean.com/) ($$$), or [Binder](https://mybinder.org/) (free, but with several limitations)
 - [Containers are awesome]{.alert}, and container tools like [Docker](https://www.docker.com/) and [Singularity](https://sylabs.io/singularity/) can be used to package your code and dependencies in a portable way
 - Which one should you use? It depends on your needs, but the more integrated your workflow is, the better!
@@ -182,16 +182,16 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello w
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width="50%"}
- We have successfully created a container with Python, NumPy, pandas, and matplotlib installed, and we have run a Python script
-  - What packages/libraries do you load?
-  - What OS do you use? (Does it work on your collaborator’s system?)
- Now we just need to activate the environment:
-  - What are the steps to reproduce your results?
+- Imagine that you have successfully done some analysis with Python, NumPy, pandas, and matplotlib installed, and you have to run a Python script
+- If you are the only one working on the project, you can probably just run it in your local environment. But ask yourself:
+  - What packages/libraries do I need to load?
+  - What OS am I using? (Will this work on my collaborator’s system?)
+  - What are the steps to reproduce my results?
 
-- However, it is better to use a package manager to declare your dependencies
-- [A single file describing the necessary dependencies]{.alert}, which can be used to install all dependencies in one step
-- Store the file in the repository root (main folder)
-- This depends on the environment/package manager you want to use:
+- However, it is better to use a [package manager to declare your dependencies]{.alert}
+- [It's a single file describing the necessary dependencies]{.alert}, which can be used to install all dependencies in one step
+- [Store the file in the repository root (main folder)]{.alert}
+- The file depends on the environment/package manager you want to use:
   - For `conda` (python and R): generate an `environment.yml` file
   - For `pip` (python only): generate a `requirements.txt` file
 :::
@@ -200,12 +200,14 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello w
 - `environment.yml` (for `conda`)
   - Used by conda to create an environment populated by specific packages and languages
   - Generate it with `conda env export -f environment.yml`
-  - Consider going through [this quick intro to conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+  - `-f` is a flag for "file"
+  - If you would like to know more about conda environments, see [this quick intro](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
   - Or get the full story in the [conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
 - `requirements.txt` (for `pip`)
-  - Generate it with `pip freeze > requirements.txt`
+  - Generate it with `pip freeze | grep -v 'file://' > requirements.txt`
   - Install dependencies declared with `pip install -r requirements.txt`
+  - `-r` is a flag for "requirements"
   - Let's see some examples
 :::
 :::
@@ -213,33 +215,43 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello w
 
 # Virtual environments 🌐 {background-color="#2d4563"}
 
-## Example: `environment.yml` file
+## Conda: `environment.yml` file
 
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width="50%"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 - [Conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) allow you to create isolated environments with specific versions of packages
-- Each environment can have its own dependencies, and you can switch between them easily
+- [Each environment can have its own dependencies]{.alert}, and you can switch between them easily
 - As they are isolated from each other, you can have different versions of the same package in different environments, and you can share the environment file with others
-- They are probably the most user-friendly way to manage dependencies in Python, and are widely used in data science
+- They are probably the [most user-friendly]{.alert} way to manage dependencies in Python, and are widely used in data science
 - Here's how to create one:
 
 ```{verbatim}
 conda create --name qtm350 python=3.12 -y
 conda activate qtm350
-conda install pandas numpy matplotlib -y
+conda install numpy matplotlib pandas -y
+
+# Or in one line:
+conda create --name qtm350 python=3.12 numpy matplotlib pandas -y
+
+# Check current environment and installed packages
+conda info --envs && conda list
+```
+
+- You can create any file in the environment, e.g., a `scripts` folder (but it won't be shared with others)
+
+```{verbatim}
 cd $(conda info --base)/envs/qtm350
-mkdir -p scripts
-cd scripts
-echo "print('Hello, world!')" > hello.py
+mkdir scripts
+echo "print('Hello, world!')" > scripts/hello.py
 ```
 :::
 
-:::{.column width="50%"}
-- To create an `environment.yml` file, you can use the following command:
+## Conda: `environment.yml` file
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+- To create an `environment.yml` file, you can use the following command (you can create the file in any folder, e.g., your Desktop):
 
 ```{verbatim}
-conda env export --name qtm350 --file environment.yml
+conda env export --name qtm350 --file ~/Desktop/environment.yml
 ```
 
 - This will create a file with the following content:
@@ -310,10 +322,46 @@ dependencies:
 prefix: /opt/miniconda3/envs/qtm350
 ```
 :::
+
+## What are build strings?
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width="50%"}
+- In conda, a [build](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/build.html) refers to [a specific compiled binary version of a package]{.alert}
+- Even when software has the same version number, it can be compiled differently for different platforms, Python versions, or with different features enabled
+- A full conda package specification has four components:
+
+```{verbatim}
+numpy=1.21.5=py39h12345_0
+└──┬─┘└─┬──┘ └────┬───┘└┬┘
+   │    │         │     │
+   │    │         │     └─ Build number (0)
+   │    │         └─────── Build string (py39h12345)
+   │    └───────────────── Version (1.21.5)
+   └────────────────────── Package name (numpy)
+```
+
+- The [`--no-builds` flag]{.alert} excludes build numbers from package specifications, making environment files [more portable across different platforms and operating systems]{.alert}
+:::
+
+:::{.column width="50%"}
+- The build string (`py39h1234567`) encodes important metadata:
+  - [Python version:]{.alert} `py39`, `py310`
+  - [Architecture:]{.alert} `linux_64`, `osx_arm64`
+  - [Compiler:]{.alert} `gcc9` (GNU/Linux), `clang` (macOS)
+  - [Features:]{.alert} `nomkl` (Intel), `cuda` (NVIDIA GPUs)
+
+- Why do builds exist, then?
+  - [Platform-specific compilation:]{.alert} Software must be compiled differently for different operating systems
+  - [Python version compatibility:]{.alert} Packages are compiled against specific Python versions
+  - [Optional features & dependencies:]{.alert} Different builds can enable/disable features
+  - [Compiler variations:]{.alert} Different compilers produce different binaries
+:::
 :::
 :::
 
-## Example: `environment.yml` file
+## Conda: `environment.yml` file
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
@@ -351,7 +399,7 @@ Executing transaction: done
 
 :::{.column width="50%"}
 - This will create a new environment called `qtm350` with the same packages and versions as the original environment
-- They can then activate the environment and run the code
+- They can then activate the environment and run the code (if they have the necessary files) by running:
 
 ```{verbatim}
 conda activate qtm350
@@ -370,11 +418,9 @@ conda env remove --name qtm350
 :::
 :::
 
-## Example: `requirements.txt` file
+## Pip: `requirements.txt` file
 
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width="50%"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 - If you are using `pip` instead of `conda`, you can generate a `requirements.txt` file with the following command:
 
 ```{verbatim}
@@ -407,7 +453,45 @@ wheel==0.44.0
 ```
 :::
 
-:::{.column width="50%"}
+## Making `requirements.txt` more portable
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+- However, `pip freeze` often includes [local file paths]{.alert} that won't work on other machines
+- To create a truly portable `requirements.txt`, we need to [remove these local paths]{.alert}
+- The easiest way is to use `grep` to filter out lines containing `file://`
+
+```{verbatim}
+# Remove local file paths from requirements.txt
+pip freeze | grep -v 'file://' > clean-requirements.txt
+
+# Or if you already have a requirements.txt with local paths:
+grep -v 'file://' requirements.txt > clean-requirements.txt
+```
+
+- What this command does:
+  - `pip freeze`: Lists all installed packages
+  - `grep -v 'file://'`: Excludes lines containing `file://`
+  - `> clean-requirements.txt`: Saves the result to a new file
+
+- Before:
+```{verbatim}
+Bottleneck @ file:///private/var/folders/.../bottleneck_1731058642212/work
+contourpy @ file:///Users/builder/.../contourpy_1701814001737/work
+matplotlib==3.9.2
+numpy @ file:///tmp/build/.../numpy-1.26.4-cp312-cp312-macosx_11_0_arm64.whl
+pandas==2.2.2
+```
+
+- After (portable):
+```{verbatim}
+matplotlib==3.9.2
+pandas==2.2.2
+```
+:::
+
+## Pip: `requirements.txt` file
+
+:::{style="margin-top: 30px; font-size: 26px;"}
 - To install the dependencies, you can run:
 
 ```{verbatim}
@@ -420,84 +504,66 @@ pip install -r requirements.txt
 - You can also use `pipenv` to manage your dependencies
 - Let's see how it works in the next slide 🤓
 :::
-:::
-:::
 
 ## `pipenv` 🐍
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width="50%"}
-- [Pipenv](https://pipenv.pypa.io/en/latest/) is a package manager for Python that combines `pip` and `virtualenv` into a single tool
-- It automatically creates and manages a virtual environment for your projects, as well as adds/removes packages from your `Pipfile` as you install/uninstall packages
-- It works in a similar way to `conda`, so if you use one there is little reason to use the other
-- To install `pipenv`, you can run:
+- [Pipenv](https://pipenv.pypa.io/en/latest/) is a modern package manager for Python that combines `pip` and `virtualenv` into a single tool
+- It automatically creates and manages virtual environments for your projects
 
 ```{verbatim}
+# Install pipenv
 pip install pipenv
-```
 
-- You can create a new environment by running:
-
-```{verbatim}
-pipenv install
-```
-
-- And to install a package, type the following:
-
-```{verbatim}
+# Create project directory and navigate to it
 mkdir qtm350
 cd qtm350
-pipenv install numpy pandas
+
+# Install packages (creates Pipfile automatically)
+pipenv install numpy pandas matplotlib
+
+# Activate the virtual environment
+pipenv shell
+
+# Run commands without activating
+pipenv run python script.py
+
+# Install development dependencies
+pipenv install pytest --dev
 ```
 :::
 
 :::{.column width="50%"}
-- Now we just need to activate the environment and 
+- [`Pipfile`:]{.alert} Human-readable file with direct dependencies (TOML format)
+- [`Pipfile.lock`:]{.alert} Auto-generated with exact versions and hashes (JSON format)
 
-```{verbatim}
-pipenv shell
-```
-- To generate a `Pipfile` file, you can run:
+- Example Pipfile:
+```{toml}
+[[source]]
+url = "https://pypi.org/simple"
 
-```{verbatim}
-pipenv lock
-```
+[packages]
+numpy = ">=1.20.0"
+pandas = ">=2.0.0"
+matplotlib = "~=3.5.0"
 
-- This will create a file with the following content:
+[dev-packages]
+pytest = "*"
+black = "*"
 
-```{verbatim}
-{
-    "_meta": {
-        "hash": {
-            "sha256": "4be66337fb4213c1154dc8bcb3176002ff54dbce0fbf6307684078957c86bda1"
-        },
-        "pipfile-spec": 6,
-        "requires": {
-            "python_version": "3.12"
-        },
-.....
+[requires]
+python_version = "3.12"
 ```
 
-- To reproduce the environment on another machine, share the `Pipfile` and `Pipfile.lock` files and run:
+- To share your environment with others:
 
-```{verbatim}
-pipenv install --ignore-pipfile
-```
+1. Share your project files (including `Pipfile` and `Pipfile.lock`)
+2. Run `pipenv install`, and you're done! 🎉
 
-- And that's all you need to know about `pipenv`! 😊
 :::
 :::
-:::
-
-## Try it yourself! 🧪 {#sec:exercise01}
-
-:::{style="margin-top: 30px; font-size: 24px;"}
-- Create a new conda environment called `qtm350` (or any other name) with the following packages: `numpy`, `pandas`, and `matplotlib`
-- Use the commands shown in the previous slides
-- Create a new `environment.yml` file with the environment you just created
-- Let me know if you have any questions! 😊
-- [[Appendix 01]{.button}](#sec:appendix01)
 :::
 
 # Containers 🚢 {background-color="#2d4563"}
@@ -551,7 +617,7 @@ pipenv install --ignore-pipfile
 :::{.column width="50%"}
 - [Containers](https://www.docker.com/resources/what-container) are a way to package software in a format that can run on any system
 - They are similar to [virtual machines](https://www.vmware.com/topics/glossary/content/virtual-machine) (VMs), but they are more lightweight and portable
-- A virtual machine runs a full operating system, while a container runs only the necessary libraries and dependencies
+- A virtual machine runs a full operating system, while [a container runs only the necessary libraries and dependencies](https://www.docker.com/resources/what-container) to run the application
 - They are also [one step up from virtual environments]{.alert}, as they package the entire computer environment, not just the dependencies and code
 - That means that you can run your code on [any system that has Docker installed]{.alert}, regardless of the operating system or the hardware
 - Talk about reproducibility! 😊
@@ -559,9 +625,9 @@ pipenv install --ignore-pipfile
 
 :::{.column width="50%"}
 - Containers are created using containerisation tools such as [Docker](https://www.docker.com/) or [Singularity](https://sylabs.io/singularity/)
-- They are usually just a stripped-down version of a Linux operating system with the necessary libraries and dependencies
-- Why Linux? Because it is open-source, and it is the most widely used operating system in the world (really!)
-- The Linux distribution of choice is usually [Ubuntu](https://ubuntu.com/) or [Alpine Linux](https://alpinelinux.org/), which is even more lightweight
+- They are usually just [a stripped-down version of Linux]{.alert} with the necessary libraries and dependencies
+- Why Linux? [You already know the answer by now!]{.alert} Because it is open-source, and it is the most widely used operating system in the world (really!)
+- The Linux distribution of choice is usually our familiar [Ubuntu](https://ubuntu.com/) or [Alpine Linux](https://alpinelinux.org/), which is even more lightweight
 - Containers are usually stored in a [container registry](https://www.docker.com/resources/what-container-registry) such as [Docker Hub](https://hub.docker.com/), so you can share them with others too
 :::
 :::
@@ -569,25 +635,25 @@ pipenv install --ignore-pipfile
 
 ## What is Docker? 🐳
 
-:::{style="margin-top: 30px; font-size: 18px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width="50%"}
 - [Docker](https://www.docker.com/) is the leading containerisation platform, especially in industry
-- Other software like [Singularity](https://sylabs.io/singularity/) is used in more niche applications, such as high-performance computing, but has a smaller user base
 - The main entities in Docker are [containers](https://www.docker.com/resources/what-container), [images](https://www.docker.com/resources/what-container), and [registries](https://www.docker.com/resources/what-container-registry)
 - [A container]{.alert}, as we have just seen, is an executable package of software that includes everything needed to run an application
 - [An image is a snapshot of a container]{.alert}. Images are created with the `build` command, and they will produce a container when started with `run`. More about the distinction [here](https://stackoverflow.com/questions/23735149/what-is-the-difference-between-a-docker-image-and-a-container)
 - [A registry]{.alert} is a collection of repositories from which you can pull images
-- Docker has very similar syntax to Git and Linux, so if you are familiar with the command line tools for them then most of Docker should seem somewhat natural (though you should still read the docs!)
+- Docker has very similar syntax to Git and Linux, so Docker should feel natural (though you should still read the docs!)
 :::
 
 :::{.column width="50%"}
 - To install Docker, you can follow the instructions [here](https://docs.docker.com/get-docker/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) is the easiest way to get started with Docker on Windows and macOS, and it includes everything you need to run Docker on your machine
 - It is a good idea to create an account too, as you can use it to store your images in [Docker Hub](https://hub.docker.com/)
-- After you have installed Docker, you can run the following command to check if it is working:
+- After you have installed and started Docker, you can run the following commands to check if it is working:
 
 ```{verbatim}
+docker info
 docker run hello-world
 
 Unable to find image 'hello-world:latest' locally
@@ -603,7 +669,7 @@ This message shows that your installation appears to be working correctly.
 ```{verbatim}
 docker -v
 
-Docker version 27.3.1, build ce12230
+Docker version 28.5.2, build ecc6942
 ```
 :::
 :::
@@ -626,13 +692,12 @@ Docker version 27.3.1, build ce12230
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width="70%"}
-- Docker can seem a little daunting at first
-- We need to create and configure a `Dockerfile` to build an image, which is a plain-text recipe that will build from scratch everything you need to recreate a project
-- It is just a text file that you can put under version control
-- Then we need to use the Dockerfile to generate a Docker image
+- Docker can seem [a little daunting]{.alert} at first
+- We need to create and configure a `Dockerfile` to build an image, which is a [plain-text recipe that will build from scratch everything you need to recreate a project]{.alert}
+- It is just [a text file that you can put under version control]{.alert}. No extension is needed, it's usually just called `Dockerfile`
 - However, in most cases [you do not need to start from scratch]{.alert}
 - [Docker Hub](https://hub.docker.com/) has thousands of images that you can use as a base for your project, and it is very likely that someone has already created an image similar to the one you need
-- For example, as of today there are [~7,600 images of data science tools](https://hub.docker.com/search?categories=Data+Science) in Docker Hub
+- For example, as of today there are [~8,500 images of data science tools](https://hub.docker.com/search?categories=Data+Science) in Docker Hub
 - But we will build one today, just to see how it works 😊
 - Our next class will be a hands-on session on Docker, so we will have plenty of time to practice how to build containers from scratch or from existing images 😉
 :::
@@ -666,9 +731,8 @@ touch Dockerfile
 
 :::{.column width="50%"}
 - The syntax is quite straightforward: 
-  - `FROM <image_name>:<tag>` is the base image, `RUN` is the command to run, and `CMD` is the command to run when the container starts
-- We will use only those three commands for now
-- [The full list of commands is available here](https://docs.docker.com/reference/dockerfile/)
+  - `FROM <image_name>:<tag>` is the base image, `RUN` is used to run bash commands while building the image, and `CMD` is used to specify which commands to run when the container starts
+- [The full list of instructions is available here](https://docs.docker.com/reference/dockerfile/)
 
 ```{verbatim}
 # Use an official Python runtime as a parent image
@@ -684,7 +748,7 @@ RUN echo "print('Hello, QTM350!')" > hello.py
 CMD ["python", "hello.py"]
 ```
 
-- We build the image with the following command (the `.` is to indicate the current directory):
+- We build the image with the following command (`-t` is for "tag", which names the image `qtm350-example`, and `.` is the current directory):
 
 ```{verbatim}
 docker build -t qtm350-example .
@@ -711,13 +775,9 @@ docker build -t qtm350-example .
 ![](figures/docker-build03.png){width='90%'}
 :::
 
-## Let's run the container! 🏃‍♂️
+## Let's run and share the container! 🏃‍♂️
 
 :::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width="40%"}
-### Testing the container
-
 - To run the container, we can use the following command:
 
 ```{verbatim}
@@ -729,13 +789,8 @@ Hello, QTM350!
  
 - Woo-hoo! 🎉 😂
 - We have successfully created a container with Python, numpy, pandas, and matplotlib installed, and we have run a Python script
-:::
-
-:::{.column width="60%"}
-### Upload to Docker Hub
-
-- If you want to share your image with others, you can upload it to Docker Hub
-- First, you need to log in to Docker Hub:
+- If you want to share your image with others, you can upload it to Docker Hub: <https://hub.docker.com/>
+- First, you need to log in 
 
 ```{verbatim}
 docker login
@@ -753,8 +808,6 @@ docker tag qtm350-example danilofreire/qtm350-example:latest
 docker push danilofreire/qtm350-example:latest
 ```
 :::
-:::
-:::
 
 ## And here it is:
 
@@ -766,9 +819,7 @@ Link: <https://hub.docker.com/r/danilofreire/qtm350-example>
 
 ## Docker pull
 
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width="50%"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 - Now that the image is on Docker Hub, anyone can pull it and run it on their machine
 - To do that, they just need to run the following command:
 
@@ -781,17 +832,13 @@ docker pull danilofreire/qtm350-example:latest
 ```{verbatim}
 docker run danilofreire/qtm350-example:latest
 ```
-:::
 
-:::{.column width="50%"}
 - And that's it! 😊
 - That's how easy it is to share your work with others using Docker
 - You can also use Docker to run your code on a server, or to create a reproducible environment for your work
-- Although our example here is extremely simple, you can build [anything you can imagine with Docker]{.alert}, from a simple web server to a complex data science pipeline and beyond
+- Although our example here is extremely simple, you can build [anything you can imagine with Docker!]{.alert}
 - Hopefully, one day researchers will require that all code is shared in a Docker container 🤓
 - ... and now you know how to do it!
-:::
-:::
 :::
 
 ## Summary 
@@ -825,18 +872,3 @@ docker run danilofreire/qtm350-example:latest
 # And that's all for today! 🎉 {background-color="#2d4563"}
 
 # See you next time! 🚀 {background-color="#2d4563"}
-
-## Appendix 01 {#sec:appendix01}
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-- Here is the solution to Exercise 01:
- 
-```{verbatim}
-conda create --name qtm350 python=3.12 -y
-conda activate qtm350
-conda install numpy pandas matplotlib -y
-conda env export --name qtm350 --file environment.yml
-```
-
-[[Back to Exercise 01]{.button}](#sec:exercise01)
-:::
