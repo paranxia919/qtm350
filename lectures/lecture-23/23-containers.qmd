@@ -346,7 +346,7 @@ numpy=1.21.5=py39h12345_0
 :::
 
 :::{.column width="50%"}
-- The build string (`py39h1234567`) encodes important metadata:
+- The build string (`py39h12345`) encodes important metadata:
   - [Python version:]{.alert} `py39`, `py310`
   - [Architecture:]{.alert} `linux_64`, `osx_arm64`
   - [Compiler:]{.alert} `gcc9` (GNU/Linux), `clang` (macOS)
@@ -495,7 +495,7 @@ pandas==2.2.2
 - To install the dependencies, you can run:
 
 ```{verbatim}
-pip install -r requirements.txt
+pip install -r clean-requirements.txt
 ```
 
 - And that's all there is to it! 😊
