@@ -31,12 +31,9 @@ RUN pip install httpx==0.27.2 numpy==1.26.4 pandas==2.2.2 \
                 dask==2024.5.0 matplotlib==3.9.2
 
 # Install Quarto
-RUN apt-get update && apt-get install -y --no-install-recommends wget ca-certificates && \
-    # Download the specific Quarto deb file
-    wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.37/quarto-1.6.37-linux-arm64.deb && \
-    # Install the local deb file (NOTICE the "./" prefix)
+RUN wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.37/quarto-1.6.37-linux-arm64.deb && \
+    # Install the local deb file (notice the "./" prefix)
     apt-get install -y ./quarto-1.6.37-linux-arm64.deb && \
-    # Clean up the downloaded file and apt cache
     rm quarto-1.6.37-linux-arm64.deb && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
