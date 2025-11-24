@@ -50,7 +50,7 @@ editor:
 
 ## Docker for Data Science
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width="50%"}
 - Last time, we saw how to create a simple container with Docker
@@ -58,6 +58,7 @@ editor:
 - We then saw how to run the container and execute a Python script, and how to [upload the container to Docker Hub](https://hub.docker.com/r/danilofreire/qtm350-example)
 - Today, we will see other Docker features that are useful for data science and build more complex containers
 - We will also discuss how to use Docker in a production environment, and how to deploy containers to the cloud
+- If time allows, we will also have some time for Q&A about your projects (we will also have some time in our next class)
 :::
 
 :::{.column width="50%"}
@@ -73,7 +74,7 @@ editor:
 
 ## A container for all tools we covered in this course
 
-:::{style="margin-top: 30px; font-size: 27px;"}
+:::{style="margin-top: 30px; font-size: 30px;"}
 - Today we will have a hands-on session where we will build a container with [all the tools we have covered in this course (!)]{.alert} 🤓
 - That includes a `bash` shell, a `git` client, a `Python` interpreter, a `Jupyter` notebook server, a `Quarto` document processor, a `SQL` database, and `Jupyter` tools
 - We will build the container using a [Dockerfile](https://docs.docker.com/engine/reference/builder/), and then run it locally
@@ -84,7 +85,7 @@ editor:
 
 ## A container for all tools we covered in this course
 
-:::{style="margin-top: 30px; font-size: 27px;"}
+:::{style="margin-top: 30px; font-size: 30px;"}
 - As we saw in the last lecture, there are many Docker images for data science, such as [Jupyter](https://hub.docker.com/r/jupyter/datascience-notebook), [RStudio](https://hub.docker.com/r/rocker/rstudio), and [SQLite](https://hub.docker.com/r/alpine/sqlite)
 - There are many ways to build (multiple) containers. For example:
   - [Docker Compose](https://docs.docker.com/compose/), which allows you to define multi-container applications in a single file
@@ -101,8 +102,8 @@ editor:
 :::{.columns}
 :::{.column width="50%"}
 - First, make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop) installed on your computer. It has everything you need to build, run, and share containers
-- If you are using Windows, you may need to enable [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to run Linux containers 
-- We will use [Ubuntu 24.04](https://hub.docker.com/_/ubuntu) as the base image for our container
+- If you are using Windows, you may need to enable [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to run Linux containers. You should have done that already!
+- We will use [Ubuntu 24.04 (Long Term Support, LTS)](https://hub.docker.com/_/ubuntu) as the base image for our container
 - As you know by now, [Ubuntu](https://ubuntu.com/) is the most popular Linux distribution and is widely used in data science and machine learning
 - But you won't even feel you are interacting with Ubuntu, as you will be using it inside a container
 :::
@@ -170,7 +171,7 @@ FROM ubuntu:24.04
 ```
 
 - The `:` character is used to specify the version of the image. In this case, we are using Ubuntu 24.04
-- You can see all tags available for the Ubuntu image [here](https://hub.docker.com/_/ubuntu)
+- You can see all tags available for the Ubuntu image at <https://hub.docker.com/_/ubuntu?tab=tags>
 - Okay, that's the easy part. Now let's install all the tools we need in the container! 🛠️
 :::
 
@@ -201,6 +202,8 @@ LABEL license="MIT"
 - Remember `apt`? We will use it again to install software packages (as we did with AWS) 
 - The only commands we will need to use are `apt-get update` (only once) and `apt-get install <package>`
   - For example, to install `git`, we would run `apt-get update && apt-get install git -y` 
+- I will also use the `--no-install-recommends` flag to avoid installing unnecessary packages
+- The `-y` flag is used to automatically answer `yes` to any prompts
 - To keep the image smaller, we will also run `apt-get clean` and `rm -rf /var/lib/apt/lists/*` after installing the packages
   - This will remove the package cache and clean up the image
 - Let's add some packages to the Dockerfile 🐳
@@ -212,14 +215,14 @@ LABEL license="MIT"
 ```Dockerfile
 # Update and install dependencies
 # Versions: https://packages.ubuntu.com/
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends\
     bash=5.2.21-2ubuntu4 \
-    git=1:2.43.0-1ubuntu7.2 \
+    git=1:2.43.0-1ubuntu7.3 \
     sqlite3=3.45.1-1ubuntu2 \
-    wget=1.21.4-1ubuntu4.1 \
-    python3=3.12.3-1ubuntu0.5 \
-    python3.12-venv=3.12.3-1ubuntu0.5 \
-    python3-pip=24.0+dfsg-1ubuntu1.1 && \ 
+    libsqlite3-0=3.45.1-1ubuntu2 \
+    python3.12=3.12.3-1ubuntu0.8 \
+    python3.12-venv=3.12.3-1ubuntu0.8 \
+    python3-pip=24.0+dfsg-1ubuntu1.3 && \ 
     apt-get clean && rm -rf /var/lib/apt/lists/*
 ```
 
@@ -240,7 +243,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 SHELL ["/bin/bash", "-c"]
 ```
 
-- The command specifies the shell to use when running commands in the container, and the `-c` option tells `bash` to run the command and then exit
+- The `SHELL` instruction sets bash as the default shell for subsequent `RUN` commands
+- The `-c` flag is required because it tells bash to read commands from a string (text), not from a file or standard input
 - This way, we can use `bash` commands in the Dockerfile without having to specify the shell every time
 :::
 
@@ -280,14 +284,14 @@ SHELL ["/bin/bash", "-c"]
 :::
 
 ## Back to the Dockerfile
-### Installing additional packages
+### Installing Python packages with `pip`
 
 :::{style="margin-top: 30px; font-size: 22px;"}
-- After installing the system packages, we have to install the additional packages we need
 - We will use the `RUN` instructions to install a few Python libraries with `pip3`, such as `numpy`, `pandas`, `jupyterlab`, `dask`, and `matplotlib`
-- You can either see the versions you already have on your computer with `pip show <package> | grep Version` or `pip freeze > requirements.txt` and then copy the versions from the file
+- You can either see the versions you already have on your computer with `pip freeze > requirements.txt` and then copy the versions from the file
 - Ubuntu requires us to create a virtual environment to install Python packages, so we will do that too
-- `ENV PATH="/opt/venv/bin:$PATH" prepends the directory `/opt/venv/bin` to the beginning of the existing `PATH` environment variable within the Docker image
+- I will use the `-m` flag to run the `venv` module as a script and create a virtual environment in the `/opt/venv` directory
+- `ENV PATH="/opt/venv/bin:$PATH"` prepends the directory `/opt/venv/bin` to the beginning of the existing `PATH` environment variable within the Docker image
 - This allows us to use the Python interpreter and packages installed in the virtual environment without needing to specify the full path every time
 
 ```Dockerfile
@@ -296,9 +300,9 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Install Python dependencies in virtual environment
-RUN pip install numpy==1.26.4 pandas==2.2.2 \
+RUN pip install httpx==0.27.2 numpy==1.26.4 pandas==2.2.2 \
                 jupyterlab==4.2.5 ipykernel==6.29.5 \
-                dask==2024.11.2 matplotlib==3.9.2
+                dask==2024.5.0 matplotlib==3.9.2
 ```
 :::
 
@@ -311,6 +315,8 @@ RUN pip install numpy==1.26.4 pandas==2.2.2 \
 - It runs on Unix-like systems, so it is available on Ubuntu, macOS, and even on Windows
 - Once we download the `.deb` file (which is the package format for Ubuntu), we can install it with `apt-get install <package>` (like we did with the other packages)
 - We can download any file from the web with `wget`, as long as we have the URL
+- I use the `./` prefix to ensure that `apt-get` installs the local file, not a package from the repositories
+- `rm` just removes the downloaded file after installation to keep the image size smaller
 
 ```Dockerfile
 # Download and install Quarto
@@ -341,6 +347,7 @@ LABEL maintainer="Danilo Freire <danilo.freire@emory.edu>"
 LABEL license="MIT"
 
 # Update and install system dependencies
+# We will see why we need to install libsqlite3-0 later
 RUN apt-get update && apt-get install -y --no-install-recommends\
     bash=5.2.21-2ubuntu4 \
     git=1:2.43.0-1ubuntu7.2 \
@@ -361,17 +368,14 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Install Python dependencies in virtual environment
-RUN pip install numpy==1.26.4 pandas==2.2.2 \
+RUN pip install httpx==0.27.2 numpy==1.26.4 pandas==2.2.2 \
                 jupyterlab==4.2.5 ipykernel==6.29.5 \
-                dask==2024.11.2 matplotlib==3.9.2
+                dask==2024.5.0 matplotlib==3.9.2
 
 # Install Quarto
-RUN apt-get update && apt-get install -y --no-install-recommends wget ca-certificates && \
-    # Download the specific Quarto deb file
-    wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.37/quarto-1.6.37-linux-arm64.deb && \
-    # Install the local deb file (NOTICE the "./" prefix)
+RUN wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.37/quarto-1.6.37-linux-arm64.deb && \
+    # Install the local deb file (notice the "./" prefix)
     apt-get install -y ./quarto-1.6.37-linux-arm64.deb && \
-    # Clean up the downloaded file and apt cache
     rm quarto-1.6.37-linux-arm64.deb && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -384,11 +388,8 @@ WORKDIR /workspace
 EXPOSE 8888
 
 # Start JupyterLab
-CMD ["sh", "-c", ". /opt/venv/bin/activate && jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root"]
+CMD . /opt/venv/bin/activate && jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
 
-# Run the Docker container
-# docker build -t qtm350-container .
-# docker run -it --rm -p 8888:8888 -v $(pwd):/workspace qtm350-container
 ```
 :::
 
@@ -500,6 +501,61 @@ docker run -p 8888:8888 -v $(pwd):/workspace qtm350-container
 ```{verbatim}
 docker tag qtm350-container danilofreire/qtm350-container
 docker push danilofreire/qtm350-container
+```
+:::
+
+## Cleaning up
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+- To clean up your system, you can remove the container and the image with the following commands
+- First, list the running containers with `docker ps -a` to get the container ID or name. `ps` is short for "process status" and the `-a` flag shows all containers, including those that are stopped
+- Then, stop the container if it is running with `docker stop <container_id_or_name>`
+- Next, remove the container with `docker rm <container_id_or_name>`
+- Finally, remove the image with `docker rmi qtm350-container`
+- You can also use `docker system prune` to remove all stopped containers, unused networks, images, and build cache (use the `-a` flag to remove all unused images too). [Warning]{.alert}: This is a more aggressive cleanup command!
+
+```{verbatim}
+docker ps -a
+docker stop <container_id_or_name>
+docker rm <container_id_or_name>
+docker rmi qtm350-container
+# Optional: docker system prune -a
+```
+:::
+
+## Running Docker containers on AWS
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+- There are many ways to run Docker containers on AWS:
+- You can use the [Amazon Elastic Container Service](https://aws.amazon.com/ecs/), which is a fully managed container orchestration service. More information here: <https://aws.amazon.com/ecs/getting-started/>
+- [Amazon SageMaker](https://aws.amazon.com/sagemaker/), which allows you to develop your machine learning models. More information here: <https://docs.aws.amazon.com/sagemaker/latest/dg/docker-containers.html>
+- [AWS Lambda](https://aws.amazon.com/lambda/). More information here: <https://docs.aws.amazon.com/lambda/latest/dg/images-create.html>
+- And of course, you use an EC2 instance and install Docker on it, like we did a few weeks ago!
+:::
+
+## Running Docker containers on AWS
+### An easy way to run our container on an EC2 instance
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+```{verbatim}
+# On your local machine: upload the Docker image to Docker Hub
+docker tag qtm350-container danilofreire/qtm350-container
+docker push danilofreire/qtm350-container
+
+# On your EC2 instance: install Docker, start the Docker service, and add your user to the docker group
+sudo apt update && \
+    sudo apt install -y docker.io -y && \
+    sudo systemctl start docker && \
+    sudo usermod -aG docker $USER
+
+# Pull the Docker image from Docker Hub
+docker pull danilofreire/qtm350-container
+
+# Run the Docker container
+docker run -p 8888:8888 -v $(pwd):/workspace danilofreire/qtm350-container
+
+# Access JupyterLab via web browser
+http://<EC2_PUBLIC_IP>:8888/lab?token=<TOKEN>
 ```
 :::
 
